@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================================
+   Fonts
+   ============================================================ */
+
+/* Toxigenesis — display / headings (bold cut only) */
+@font-face {
+  font-family: "Toxigenesis";
+  src: url("/fonts/toxigenesis/typodermic-toxigenesisrg-bold.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Fivo Sans Modern — body / UI */
+@font-face {
+  font-family: "Fivo Sans Modern";
+  src: url("/fonts/FivoSansModern/FivoSansModern-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fivo Sans Modern";
+  src: url("/fonts/FivoSansModern/FivoSansModern-Regular-Oblique.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fivo Sans Modern";
+  src: url("/fonts/FivoSansModern/FivoSansModern-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fivo Sans Modern";
+  src: url("/fonts/FivoSansModern/FivoSansModern-Medium-Oblique.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fivo Sans Modern";
+  src: url("/fonts/FivoSansModern/FivoSansModern-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fivo Sans Modern";
+  src: url("/fonts/FivoSansModern/FivoSansModern-Bold-Oblique.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fivo Sans Modern";
+  src: url("/fonts/FivoSansModern/FivoSansModern-Heavy.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fivo Sans Modern";
+  src: url("/fonts/FivoSansModern/FivoSansModern-Heavy-Oblique.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fivo Sans Modern";
+  src: url("/fonts/FivoSansModern/FivoSansModern-ExtBlack.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fivo Sans Modern";
+  src: url("/fonts/FivoSansModern/FivoSansModern-ExtBlack-Oblique.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================================
+   Design tokens
+   ============================================================ */
+
+@theme {
+  /* Brand palette */
+  --color-dark: #05191a;
+  --color-gold: #f7c15d;
+  --color-green: #8eb467;
+  --color-green-dark: #353f2c;
+  --color-grey-light: #e6e6e6;
+
+  /* Semantic aliases */
+  --color-background: var(--color-dark);
+  --color-foreground: var(--color-grey-light);
+  --color-accent: var(--color-gold);
+  --color-muted: var(--color-green-dark);
+
+  /* Typography */
+  --font-sans: "Fivo Sans Modern", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Toxigenesis", "Fivo Sans Modern", ui-sans-serif, system-ui,
+    sans-serif;
 }
+
+/* ============================================================
+   Base
+   ============================================================ */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-dark);
 }
