@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "siteName": "Mining Reputation",
+    "home": {
+      "title": "Mining Reputation",
+      "description": "Conseil en stratégie de réputation et communication pour le secteur minier et des minéraux critiques."
+    },
+    "about": {
+      "title": "À propos",
+      "description": "Qui nous sommes et comment nous accompagnons exploitants, investisseurs et régulateurs du secteur minier."
+    },
+    "insights": {
+      "title": "Analyses",
+      "description": "Analyses et commentaires sur la réputation, la licence d'exploitation et la confiance des parties prenantes dans le secteur minier."
+    }
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "insights": "Analyses",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "primary": "Principale",
+    "language": "Langue"
+  },
+  "footer": {
+    "rights": "Tous droits réservés."
+  },
+  "insights": {
+    "heading": "Analyses",
+    "intro": "Analyses sur la réputation et la confiance dans le secteur minier.",
+    "empty": "Aucun article n'a encore été publié.",
+    "readMore": "Lire la suite",
+    "publishedOn": "Publié le {date, date, long}"
+  },
+  "article": {
+    "back": "Retour aux analyses",
+    "byline": "Par {name}",
+    "notFound": "Cet article est introuvable."
+  }
+}

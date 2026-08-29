@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "siteName": "Mining Reputation",
+    "home": {
+      "title": "Mining Reputation",
+      "description": "Reputation strategy and communications counsel for the mining and critical minerals sector."
+    },
+    "about": {
+      "title": "About",
+      "description": "Who we are and how we work with operators, investors and regulators across the mining sector."
+    },
+    "insights": {
+      "title": "Insights",
+      "description": "Analysis and commentary on reputation, licence to operate, and stakeholder trust in mining."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "insights": "Insights",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "primary": "Primary",
+    "language": "Language"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "insights": {
+    "heading": "Insights",
+    "intro": "Analysis on reputation and trust in the mining sector.",
+    "empty": "No articles have been published yet.",
+    "readMore": "Read more",
+    "publishedOn": "Published {date, date, long}"
+  },
+  "article": {
+    "back": "Back to insights",
+    "byline": "By {name}",
+    "notFound": "That article could not be found."
+  }
+}
