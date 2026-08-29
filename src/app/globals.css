@@ -211,3 +211,33 @@
     @apply font-sans;
   }
 }
+/* ============================================================
+   Preloader
+   ============================================================ */
+
+/* Set pre-paint by the inline script in the locale layout, so a repeat
+   visitor in the same session never sees a frame of the preloader. */
+html[data-preloaded] [data-preloader] {
+  display: none;
+}
+
+/* Hold the page still underneath while the preloader is up. */
+html[data-preloading] body {
+  overflow: hidden;
+}
+
+/* ============================================================
+   Site header reveal
+   ============================================================ */
+
+/* The header is hidden from the FIRST server paint on any page containing a
+   scroll hero, and revealed once the hero sets data-hero-revealed. Doing this
+   in CSS rather than an inline style is what prevents the header flashing in
+   and back out during hydration. */
+body:has([data-scroll-hero]:not([data-hero-revealed])) [data-site-header] {
+  opacity: 0;
+}
+
+body:has([data-scroll-hero]:not([data-hero-revealed])) [data-site-header] * {
+  pointer-events: none;
+}

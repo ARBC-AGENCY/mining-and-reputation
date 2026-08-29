@@ -62,7 +62,7 @@ export default async function ArticlePage({ params }: Props) {
   }
 
   return (
-    <article className="mx-auto max-w-3xl px-6 py-20">
+    <article className="mx-auto max-w-3xl px-6 pb-20 pt-36">
       <Link
         href="/insights"
         className="text-grey-light/60 hover:text-gold text-sm transition-colors"

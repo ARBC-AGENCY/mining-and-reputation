@@ -12,6 +12,17 @@
     "insights": {
       "title": "Analyses",
       "description": "Analyses et commentaires sur la réputation, la licence d'exploitation et la confiance des parties prenantes dans le secteur minier."
+    },
+    "preloader": {
+      "label": "Chargement"
+    },
+    "expertise": {
+      "title": "Expertise",
+      "description": "Stratégie de réputation, dialogue avec les parties prenantes et conseil en communication pour le secteur minier."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Parlons réputation, confiance et communication avec les parties prenantes dans le secteur minier."
     }
   },
   "nav": {
@@ -22,7 +33,10 @@
     "closeMenu": "Fermer le menu",
     "primary": "Principale",
     "language": "Langue",
-    "contact": "Contact"
+    "contact": "Contact",
+    "expertise": "Expertise",
+    "blog": "Blog",
+    "talkToUs": "Parlons-en"
   },
   "footer": {
     "rights": "Tous droits réservés."
@@ -70,6 +84,16 @@
       },
       "generic": "Une erreur est survenue. Veuillez réessayer ou nous écrire directement.",
       "unavailable": "Le formulaire de contact est temporairement indisponible."
+    }
+  },
+  "home": {
+    "hero": {
+      "brand": "Mining & Reputation",
+      "scrollHint": "Faites défiler pour découvrir",
+      "imageAlt": "Vue aérienne d'un site minier au crépuscule",
+      "title": "Les mines déplacent des ressources. La réputation déplace tout le reste.",
+      "description": "Mining & Reputation accompagne les entreprises minières pour bâtir la confiance, protéger leur réputation et communiquer efficacement avec les parties prenantes qui façonnent leur avenir.",
+      "cta": "Découvrir notre expertise"
     }
   }
 }

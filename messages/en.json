@@ -12,6 +12,17 @@
     "insights": {
       "title": "Insights",
       "description": "Analysis and commentary on reputation, licence to operate, and stakeholder trust in mining."
+    },
+    "preloader": {
+      "label": "Loading"
+    },
+    "expertise": {
+      "title": "Expertise",
+      "description": "Reputation strategy, stakeholder engagement and communications counsel for the mining sector."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Talk to us about reputation, trust and stakeholder communication in mining."
     }
   },
   "nav": {
@@ -22,7 +33,10 @@
     "closeMenu": "Close menu",
     "primary": "Primary",
     "language": "Language",
-    "contact": "Contact"
+    "contact": "Contact",
+    "expertise": "Expertise",
+    "blog": "Blog",
+    "talkToUs": "Talk to Us"
   },
   "footer": {
     "rights": "All rights reserved."
@@ -70,6 +84,16 @@
       },
       "generic": "Something went wrong. Please try again, or email us directly.",
       "unavailable": "The contact form is temporarily unavailable."
+    }
+  },
+  "home": {
+    "hero": {
+      "brand": "Mining & Reputation",
+      "scrollHint": "Scroll to explore",
+      "imageAlt": "Aerial view of a mine site at dusk",
+      "title": "Mining moves resources. Reputation moves everything else.",
+      "description": "Mining & Reputation helps mining companies build trust, protect their reputation and communicate effectively with the stakeholders who shape their future.",
+      "cta": "Discover our expertise"
     }
   }
 }

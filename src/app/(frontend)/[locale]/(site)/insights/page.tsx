@@ -29,7 +29,7 @@ export default async function InsightsPage({ params }: Props) {
   const { data: articles } = await sanityFetch({ query: ARTICLES_QUERY });
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-20">
+    <div className="mx-auto max-w-6xl px-6 pb-20 pt-36">
       <h1 className="font-display text-gold text-4xl tracking-wide">
         {t("heading")}
       </h1>

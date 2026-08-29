@@ -44,6 +44,8 @@ export interface ScrollExpandProps {
   overlayScrim?: number;
   useWindowScroll?: boolean;
   enabled?: boolean;
+  /** Local addition: fires with eased scroll progress 0..1 on every frame. */
+  onProgress?: (progress: number) => void;
   children?: ReactNode;
   className?: string;
   style?: CSSProperties;
@@ -68,6 +70,7 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
   overlayScrim = 0.45,
   useWindowScroll = false,
   enabled = true,
+  onProgress,
   children,
   className = '',
   style,
@@ -100,7 +103,16 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
     enabled
   };
 
+  // Local addition: keep the latest callback in a ref so applyProgress can stay
+  // dependency-free, and sync it in an effect rather than during render.
+  const onProgressRef = useRef<((progress: number) => void) | undefined>(undefined);
+  useEffect(() => {
+    onProgressRef.current = onProgress;
+  }, [onProgress]);
+
   const applyProgress = useCallback((p: number) => {
+    onProgressRef.current?.(p);
+
     const frame = frameRef.current;
     const media = mediaRef.current;
     if (!frame || !media) return;
