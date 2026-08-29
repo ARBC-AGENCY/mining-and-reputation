@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./LocaleSwitcher";
@@ -21,9 +22,14 @@ export function MobileMenu({ links }: { links: NavLink[] }) {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-controls="mobile-menu"
-        className="text-grey-light text-sm uppercase"
+        aria-label={open ? t("closeMenu") : t("openMenu")}
+        className="text-grey-light hover:text-gold -mr-2 p-2 transition-colors"
       >
-        {open ? t("closeMenu") : t("openMenu")}
+        {open ? (
+          <X className="size-6" aria-hidden="true" />
+        ) : (
+          <Menu className="size-6" aria-hidden="true" />
+        )}
       </button>
 
       {open && (

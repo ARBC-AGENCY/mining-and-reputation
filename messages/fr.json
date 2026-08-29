@@ -21,7 +21,8 @@
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu",
     "primary": "Principale",
-    "language": "Langue"
+    "language": "Langue",
+    "contact": "Contact"
   },
   "footer": {
     "rights": "Tous droits réservés."
@@ -37,5 +38,38 @@
     "back": "Retour aux analyses",
     "byline": "Par {name}",
     "notFound": "Cet article est introuvable."
+  },
+  "contact": {
+    "heading": "Contact",
+    "intro": "Décrivez-nous votre situation et nous vous répondrons sous deux jours ouvrés.",
+    "fields": {
+      "name": "Nom",
+      "email": "E-mail",
+      "organisation": "Organisation",
+      "organisationOptional": "Organisation (facultatif)",
+      "message": "Message"
+    },
+    "submit": "Envoyer la demande",
+    "sending": "Envoi en cours…",
+    "success": "Merci. Votre demande a bien été envoyée.",
+    "errors": {
+      "name": {
+        "tooShort": "Veuillez saisir votre nom.",
+        "tooLong": "Ce nom est trop long."
+      },
+      "email": {
+        "invalid": "Veuillez saisir une adresse e-mail valide.",
+        "tooLong": "Cette adresse e-mail est trop longue."
+      },
+      "organisation": {
+        "tooLong": "Ce nom d'organisation est trop long."
+      },
+      "message": {
+        "tooShort": "Veuillez écrire au moins quelques phrases.",
+        "tooLong": "Ce message est trop long."
+      },
+      "generic": "Une erreur est survenue. Veuillez réessayer ou nous écrire directement.",
+      "unavailable": "Le formulaire de contact est temporairement indisponible."
+    }
   }
 }

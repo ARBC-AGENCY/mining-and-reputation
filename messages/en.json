@@ -21,7 +21,8 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "primary": "Primary",
-    "language": "Language"
+    "language": "Language",
+    "contact": "Contact"
   },
   "footer": {
     "rights": "All rights reserved."
@@ -37,5 +38,38 @@
     "back": "Back to insights",
     "byline": "By {name}",
     "notFound": "That article could not be found."
+  },
+  "contact": {
+    "heading": "Contact",
+    "intro": "Tell us about your situation and we will respond within two working days.",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "organisation": "Organisation",
+      "organisationOptional": "Organisation (optional)",
+      "message": "Message"
+    },
+    "submit": "Send enquiry",
+    "sending": "Sending…",
+    "success": "Thank you. Your enquiry has been sent.",
+    "errors": {
+      "name": {
+        "tooShort": "Please enter your name.",
+        "tooLong": "That name is too long."
+      },
+      "email": {
+        "invalid": "Please enter a valid email address.",
+        "tooLong": "That email address is too long."
+      },
+      "organisation": {
+        "tooLong": "That organisation name is too long."
+      },
+      "message": {
+        "tooShort": "Please give us at least a couple of sentences.",
+        "tooLong": "That message is too long."
+      },
+      "generic": "Something went wrong. Please try again, or email us directly.",
+      "unavailable": "The contact form is temporarily unavailable."
+    }
   }
 }
