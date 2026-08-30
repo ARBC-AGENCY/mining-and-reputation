@@ -1,8 +1,19 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { HomeHero } from "@/components/hero/HomeHero";
+import { ExpertiseSection } from "@/components/sections/ExpertiseSection";
 import type { Locale } from "@/i18n/routing";
 import { alternatesFor } from "@/lib/metadata";
+
+// Order here drives the 01..06 numbering on the cards.
+const CARD_KEYS = [
+  "crisis",
+  "media",
+  "esg",
+  "community",
+  "financial",
+  "digital",
+] as const;
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -24,6 +35,7 @@ export default async function Home({ params }: Props) {
   setRequestLocale(locale);
 
   const t = await getTranslations("home.hero");
+  const tx = await getTranslations("home.expertise");
 
   return (
     <>
@@ -37,9 +49,19 @@ export default async function Home({ params }: Props) {
           cta: t("cta"),
         }}
       />
-      {/* Placeholder for the next section — keeps the scroll out of the hero
-          from ending abruptly. Replace as the homepage is designed. */}
-      <section className="bg-dark min-h-[60svh]" />
+      <ExpertiseSection
+        strings={{
+          heading: tx("heading"),
+          intro: tx("intro"),
+          cta: tx("cta"),
+          carouselLabel: tx("carouselLabel"),
+          cards: CARD_KEYS.map((key, i) => ({
+            eyebrow: String(i + 1).padStart(2, "0"),
+            title: tx(`cards.${key}.title`),
+            description: tx(`cards.${key}.description`),
+          })),
+        }}
+      />
     </>
   );
 }

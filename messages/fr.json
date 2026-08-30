@@ -94,6 +94,38 @@
       "title": "Les mines déplacent des ressources. La réputation déplace tout le reste.",
       "description": "Mining & Reputation accompagne les entreprises minières pour bâtir la confiance, protéger leur réputation et communiquer efficacement avec les parties prenantes qui façonnent leur avenir.",
       "cta": "Découvrir notre expertise"
+    },
+    "expertise": {
+      "heading": "Une expertise pour chaque dimension de la réputation",
+      "intro": "Des relations avec les communautés à la gestion de crise, nous aidons les organisations minières à communiquer avec clarté, crédibilité et constance.",
+      "cta": "Découvrir toutes nos expertises",
+      "carouselLabel": "Domaines d'expertise",
+      "cards": {
+        "crisis": {
+          "title": "Communication de crise",
+          "description": "Anticiper les situations critiques, préserver la confiance et communiquer avec fermeté quand les enjeux sont les plus élevés."
+        },
+        "media": {
+          "title": "Relations médias & stratégie de porte-parole",
+          "description": "Construire des relations médias solides, renforcer la visibilité des dirigeants et garantir une représentation claire et crédible de votre organisation."
+        },
+        "esg": {
+          "title": "ESG, RSE & licence sociale d'exploitation",
+          "description": "Traduire vos engagements en récits crédibles qui démontrent l'impact, la responsabilité et la valeur à long terme."
+        },
+        "community": {
+          "title": "Relations avec les communautés",
+          "description": "Renforcer le dialogue avec les communautés locales et les parties prenantes autour des opérations et projets miniers."
+        },
+        "financial": {
+          "title": "Communication financière",
+          "description": "Transmettre l'information stratégique avec clarté aux investisseurs, partenaires et acteurs financiers."
+        },
+        "digital": {
+          "title": "Réputation numérique & veille",
+          "description": "Comprendre la perception de votre organisation en ligne, détecter les signaux faibles et protéger votre réputation sur les canaux numériques."
+        }
+      }
     }
   }
 }

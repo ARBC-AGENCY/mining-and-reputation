@@ -94,6 +94,38 @@
       "title": "Mining moves resources. Reputation moves everything else.",
       "description": "Mining & Reputation helps mining companies build trust, protect their reputation and communicate effectively with the stakeholders who shape their future.",
       "cta": "Discover our expertise"
+    },
+    "expertise": {
+      "heading": "Expertise for every dimension of reputation",
+      "intro": "From community relations to crisis management, we help mining organisations communicate with clarity, credibility and consistency.",
+      "cta": "Explore all expertise",
+      "carouselLabel": "Areas of expertise",
+      "cards": {
+        "crisis": {
+          "title": "Crisis Communication",
+          "description": "Prepare for critical situations, protect trust and communicate decisively when the stakes are highest."
+        },
+        "media": {
+          "title": "Media Relations & Spokesperson Strategy",
+          "description": "Build strong media relationships, strengthen executive visibility and ensure your organisation is represented with clarity and authority."
+        },
+        "esg": {
+          "title": "ESG, CSR & Social Licence to Operate",
+          "description": "Translate commitments into credible narratives that demonstrate impact, responsibility and long-term value."
+        },
+        "community": {
+          "title": "Community Relations",
+          "description": "Build stronger dialogue with local communities and stakeholders around mining operations and projects."
+        },
+        "financial": {
+          "title": "Financial Communication",
+          "description": "Communicate strategic information clearly to investors, partners and financial stakeholders."
+        },
+        "digital": {
+          "title": "Digital Reputation & Monitoring",
+          "description": "Understand how your organisation is perceived online, detect emerging issues and protect your reputation across digital channels."
+        }
+      }
     }
   }
 }
