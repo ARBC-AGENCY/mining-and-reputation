@@ -39,18 +39,18 @@ export function ExpertiseSection({ strings }: { strings: ExpertiseStrings }) {
 
   return (
     <section className="bg-dark py-20 md:py-28 lg:py-32">
-      <div className="mx-auto max-xl:flex max-xl:flex-col grid max-w-7xl items-center gap-12 px-6 xl:grid-cols-2 xl:gap-16 xl:px-8">
+      <div className="mx-auto max-xl:flex max-lg:flex-col max-xl:items-start grid max-w-7xl items-center gap-12 px-6 xl:grid-cols-2 xl:gap-16 xl:px-8">
         {/* Text first in the DOM, so it also comes first when stacked. */}
-        <div className="max-w-lg max-xl:flex max-xl:flex-col max-xl:items-center max-xl:text-center">
-          <h2 className="font-display text-2xl max-xl:text-center leading-tight text-white lg:text-4xl">
+        <div className="lg:max-w-sm xl:max-w-lg lg:self-center sm:max-w-none sm:items-center lg:items-start  max-xl:flex max-xl:flex-col ">
+          <h2 className="font-display text-[1.75rem] text-balance  leading-[1.1] text-white sm:text-2xl sm:text-center lg:text-left md:text-3xl lg:text-4xl lg:leading-[1.05]">
             {strings.heading}
           </h2>
-          <p className="text-grey-light/70 mt-6 max-xl:text-center text-base leading-relaxed md:text-lg">
+          <p className="text-grey-light/70 mt-6  text-base text-pretty leading-relaxed md:text-lg sm:text-center lg:text-left">
             {strings.intro}
           </p>
           <Link
             href="/expertise"
-            className="text-gold mt-10 inline-flex max-xl:text-center items-center gap-2 text-sm font-medium transition-colors hover:text-white"
+            className="text-gold mt-10 inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-white"
           >
             {strings.cta}
             <ArrowRight className="size-4" aria-hidden="true" />
