@@ -169,11 +169,7 @@
       "empty": "Les premières analyses arrivent bientôt."
     },
     "voices": {
-      "series": "Mining Voices",
-      "label": "Voix de l'industrie minière",
-      "heading": "Des conversations avec celles et ceux qui façonnent l'avenir du secteur minier.",
-      "text": "Dirigeants, experts et leaders du secteur partagent leur regard sur les mines, la réputation, la durabilité et les défis qui transforment la filière.",
-      "cta": "Voir la dernière interview",
+      "cta": "Voir l'interview",
       "ctaFallback": "Voir d'autres interviews"
     }
   },

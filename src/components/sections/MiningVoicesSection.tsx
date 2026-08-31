@@ -1,4 +1,3 @@
-import { getLocale, getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/motion/Reveal";
 import {
   MiningVoicesShowcase,
@@ -7,38 +6,21 @@ import {
 import { parseVideo } from "@/lib/video";
 import { urlFor } from "@/sanity/lib/image";
 import { sanityFetch } from "@/sanity/lib/live";
-import { INTERVIEWS_QUERY, SITE_SETTINGS_QUERY } from "@/sanity/lib/queries";
-
-const FALLBACK_POSTER = "/images/Background-2@2560.webp";
+import { INTERVIEWS_QUERY } from "@/sanity/lib/queries";
 
 /**
- * "Mining Voices" — the video interview series.
+ * Latest video interview.
  *
- * Copy is static brand positioning, so the section renders with or without
- * content; only the poster and the play target are dynamic. Playback happens in
- * an overlay rather than an inline embed, so no YouTube iframe (≈1MB of JS plus
- * third-party cookies) loads until the viewer actually presses play.
+ * Every visible string comes from the post itself — title, description,
+ * category — because interviews stand alone rather than belonging to a series.
+ * With no interviews published the section renders nothing at all, rather than
+ * showing framing copy for content that does not exist.
+ *
+ * Playback happens in an overlay, so no YouTube iframe (and no third-party
+ * cookie) loads until the viewer presses play.
  */
 export async function MiningVoicesSection() {
-  const t = await getTranslations("home.voices");
-  const locale = await getLocale();
-  const [{ data }, { data: settings }] = await Promise.all([
-    sanityFetch({ query: INTERVIEWS_QUERY }),
-    sanityFetch({ query: SITE_SETTINGS_QUERY }),
-  ]);
-
-  // CMS copy wins where an editor has filled it in; otherwise the translation
-  // files supply the wording, so the section is never blank.
-  const pick = (
-    field: { en?: string | null; fr?: string | null } | null | undefined,
-    fallback: string,
-  ) => (locale === "fr" ? field?.fr : field?.en)?.trim() || fallback;
-
-  const copy = {
-    label: pick(settings?.voices?.label, t("label")),
-    heading: pick(settings?.voices?.heading, t("heading")),
-    text: pick(settings?.voices?.text, t("text")),
-  };
+  const { data } = await sanityFetch({ query: INTERVIEWS_QUERY });
 
   const items: VoicesItem[] = (data ?? []).map((post) => {
     let poster: string | null = null;
@@ -55,26 +37,26 @@ export async function MiningVoicesSection() {
         poster = null;
       }
     }
-    // No cover image uploaded? Fall back to the video's own thumbnail.
+    // No cover uploaded? Use the video's own thumbnail.
     poster ??= parseVideo(post.videoUrl)?.thumbnailUrl ?? null;
 
     return {
       slug: post.slug ?? null,
       title: post.title ?? null,
+      excerpt: post.excerpt ?? null,
+      category: post.categories?.[0]?.title ?? null,
       poster,
       videoUrl: post.videoUrl ?? null,
     };
   });
 
+  if (items.length === 0) return null;
+
   return (
     <section className="bg-dark border-t border-white/5 py-20 md:py-28 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <Reveal>
-          <MiningVoicesShowcase
-            items={items}
-            fallbackPoster={FALLBACK_POSTER}
-            copy={copy}
-          />
+          <MiningVoicesShowcase items={items} />
         </Reveal>
       </div>
     </section>

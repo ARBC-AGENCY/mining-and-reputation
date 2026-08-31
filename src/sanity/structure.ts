@@ -16,18 +16,6 @@ export const structure: StructureResolver = (S) =>
   S.list()
     .title("Content")
     .items([
-      S.listItem()
-        .title("Site settings")
-        .id("siteSettings")
-        .child(
-          S.document()
-            .schemaType("siteSettings")
-            .documentId("siteSettings")
-            .title("Site settings"),
-        ),
-
-      S.divider(),
-
       ...FORMATS.map(({ title, value }) =>
         S.listItem()
           .title(title)
@@ -55,6 +43,6 @@ export const structure: StructureResolver = (S) =>
       S.divider(),
 
       ...S.documentTypeListItems().filter(
-        (item) => !["post", "siteSettings"].includes(item.getId() ?? ""),
+        (item) => !["post"].includes(item.getId() ?? ""),
       ),
     ]);

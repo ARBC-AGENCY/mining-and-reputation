@@ -169,11 +169,7 @@
       "empty": "The first insights are on their way."
     },
     "voices": {
-      "series": "Mining Voices",
-      "label": "Voices of the mining industry",
-      "heading": "Conversations with the people shaping the future of mining.",
-      "text": "Executives, experts and industry leaders share their perspectives on mining, reputation, sustainability and the challenges transforming the sector.",
-      "cta": "Watch the latest interview",
+      "cta": "Watch the interview",
       "ctaFallback": "View other interviews"
     }
   },

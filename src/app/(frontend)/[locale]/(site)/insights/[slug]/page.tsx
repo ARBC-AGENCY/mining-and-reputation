@@ -92,6 +92,13 @@ export default async function ArticlePage({ params }: Props) {
         {article.title}
       </h1>
 
+      {/* Standfirst: the same description used on cards and the homepage. */}
+      {article.excerpt && (
+        <p className="text-grey-light/80 mt-6 text-lg leading-relaxed text-pretty">
+          {article.excerpt}
+        </p>
+      )}
+
       <div className="text-grey-light/50 mt-4 flex flex-wrap gap-x-4 text-sm">
         {article.author?.name && <span>{t("byline", { name: article.author.name })}</span>}
         {article.publishedAt && (

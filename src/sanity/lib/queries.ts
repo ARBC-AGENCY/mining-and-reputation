@@ -85,13 +85,3 @@ export const POST_SLUGS_QUERY = defineQuery(`
   *[_type == "post" && defined(slug.current)].slug.current
 `);
 
-/** Site-level copy. Every field is optional; the app falls back to messages. */
-export const SITE_SETTINGS_QUERY = defineQuery(`
-  *[_type == "siteSettings"][0]{
-    voices{
-      label{ en, fr },
-      heading{ en, fr },
-      text{ en, fr }
-    }
-  }
-`);

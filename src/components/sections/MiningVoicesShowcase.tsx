@@ -10,32 +10,20 @@ import { Link } from "@/i18n/navigation";
 export type VoicesItem = {
   slug: string | null;
   title: string | null;
-  /** Already resolved server-side: cover image, else the video's own thumbnail. */
+  excerpt: string | null;
+  category: string | null;
+  /** Resolved server-side: cover image, else the video's own thumbnail. */
   poster: string | null;
   videoUrl: string | null;
 };
 
-export type VoicesCopy = {
-  label: string;
-  heading: string;
-  text: string;
-};
-
-export function MiningVoicesShowcase({
-  items,
-  fallbackPoster,
-  copy,
-}: {
-  items: VoicesItem[];
-  fallbackPoster: string;
-  /** Resolved server-side: CMS value if set, else the translation file. */
-  copy: VoicesCopy;
-}) {
+export function MiningVoicesShowcase({ items }: { items: VoicesItem[] }) {
   const t = useTranslations("home.voices");
+  const tf = useTranslations("formats");
+  const ta = useTranslations("article");
   const [openAt, setOpenAt] = useState<number | null>(null);
 
-  const latest = items[0] ?? null;
-  const poster = latest?.poster ?? fallbackPoster;
+  const latest = items[0];
   const playable = items.filter((i) => i.videoUrl);
 
   const media: MediaItem[] = playable.map((i) => ({
@@ -45,27 +33,36 @@ export function MiningVoicesShowcase({
     image: i.poster,
   }));
 
+  // Index of the latest video within the playable list, so the overlay opens
+  // on the one being shown rather than always on the first.
+  const latestPlayableIndex = Math.max(
+    0,
+    playable.findIndex((i) => i.slug === latest.slug),
+  );
+
+  const canPlay = media.length > 0 && Boolean(latest.videoUrl);
+
   return (
     <>
-      <div className="group relative block overflow-hidden rounded-[18px] border border-white/10">
+      <div className="group relative overflow-hidden rounded-[18px] border border-white/10">
         <div className="relative min-h-[440px] w-full md:min-h-[520px] lg:min-h-[600px]">
-          <Image
-            src={poster}
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover transition-transform duration-[900ms] group-hover:scale-[1.03]"
-          />
+          {latest.poster && (
+            <Image
+              src={latest.poster}
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover transition-transform duration-[900ms] group-hover:scale-[1.03]"
+            />
+          )}
           <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(5,25,26,0.94)_0%,rgba(5,25,26,0.72)_45%,rgba(5,25,26,0.35)_100%)]" />
 
           <div className="relative flex h-full min-h-[440px] flex-col justify-end p-7 md:min-h-[520px] md:p-12 lg:min-h-[600px] lg:p-16">
             <div className="flex items-center gap-3">
-              {/* A real button when there is something to play, so it is
-                  keyboard reachable and announces itself correctly. */}
-              {media.length > 0 ? (
+              {canPlay ? (
                 <button
                   type="button"
-                  onClick={() => setOpenAt(0)}
+                  onClick={() => setOpenAt(latestPlayableIndex)}
                   aria-label={t("cta")}
                   className="grid size-11 cursor-pointer place-items-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md transition-colors duration-500 hover:border-[#F7C15D] hover:bg-[#F7C15D]/20 md:size-14"
                 >
@@ -82,39 +79,45 @@ export function MiningVoicesShowcase({
                   <Play className="size-4 fill-white text-white md:size-5" />
                 </span>
               )}
+              {/* Category if the editor set one, otherwise the format. */}
               <span className="text-xs font-medium tracking-[0.25em] text-[#F7C15D] uppercase">
-                {copy.label}
+                {latest.category ?? tf("interview")}
               </span>
             </div>
 
+            {/* The video's own title and description. */}
             <h2 className="font-display mt-7 max-w-3xl text-2xl leading-tight text-balance text-white md:text-4xl lg:text-5xl">
-              {copy.heading}
+              {latest.title}
             </h2>
-            <p className="text-grey-light/80 mt-5 max-w-2xl text-sm leading-relaxed text-pretty md:text-base">
-              {copy.text}
-            </p>
-
-            {latest?.title && (
-              <p className="text-grey-light/60 mt-6 text-sm">
-                <span className="text-grey-light/40">{t("series")} — </span>
-                {latest.title}
+            {latest.excerpt && (
+              <p className="text-grey-light/80 mt-5 max-w-2xl text-sm leading-relaxed text-pretty md:text-base">
+                {latest.excerpt}
               </p>
             )}
 
             <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
-              {media.length > 0 && (
+              {canPlay && (
                 <button
                   type="button"
-                  onClick={() => setOpenAt(0)}
+                  onClick={() => setOpenAt(latestPlayableIndex)}
                   className="text-gold inline-flex cursor-pointer items-center gap-2 text-sm font-medium transition-colors hover:text-white"
                 >
                   {t("cta")}
                   <Play className="size-3.5 fill-current" aria-hidden="true" />
                 </button>
               )}
+              {latest.slug && (
+                <Link
+                  href={`/insights/${latest.slug}`}
+                  className="text-grey-light/70 inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-white"
+                >
+                  {ta("readMore")}
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </Link>
+              )}
               <Link
                 href="/insights?type=interview"
-                className="text-gold inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-white"
+                className="text-grey-light/70 inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-white"
               >
                 {t("ctaFallback")}
                 <ArrowRight className="size-4" aria-hidden="true" />
