@@ -6,6 +6,8 @@ import { ExpertiseSection } from "@/components/sections/ExpertiseSection";
 import { SectorsSection } from "@/components/sections/SectorsSection";
 import { InsightsSection } from "@/components/sections/InsightsSection";
 import { MiningVoicesSection } from "@/components/sections/MiningVoicesSection";
+import { NewsletterSection } from "@/components/sections/NewsletterSection";
+import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
 import type { Locale } from "@/i18n/routing";
 import { alternatesFor } from "@/lib/metadata";
 
@@ -78,6 +80,10 @@ export default async function Home({ params }: Props) {
       <InsightsSection />
 
       <MiningVoicesSection />
+
+      <NewsletterSection />
+
+      <FinalCtaSection />
     </>
   );
 }

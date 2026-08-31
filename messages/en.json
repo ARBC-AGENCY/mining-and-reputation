@@ -23,6 +23,22 @@
     "contact": {
       "title": "Contact",
       "description": "Talk to us about reputation, trust and stakeholder communication in mining."
+    },
+    "caseStudies": {
+      "title": "Case studies",
+      "description": "Case studies"
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "Privacy Policy"
+    },
+    "legal": {
+      "title": "Legal Notice",
+      "description": "Legal Notice"
+    },
+    "cookies": {
+      "title": "Cookies",
+      "description": "Cookies"
     }
   },
   "nav": {
@@ -39,7 +55,37 @@
     "talkToUs": "Talk to Us"
   },
   "footer": {
-    "rights": "All rights reserved."
+    "tagline": "Strategic communication and reputation for the mining industry.",
+    "rights": "All rights reserved.",
+    "expertise": "Expertise",
+    "insights": "Insights",
+    "company": "Company",
+    "follow": "Follow",
+    "newsletter": "Newsletter",
+    "expertiseItems": {
+      "crisis": "Crisis Communication",
+      "media": "Media Relations",
+      "esg": "ESG & CSR",
+      "communities": "Community Relations",
+      "financial": "Financial Communication",
+      "digital": "Digital Reputation"
+    },
+    "insightsItems": {
+      "articles": "Articles",
+      "interviews": "Interviews",
+      "news": "Mining News",
+      "reports": "Reports"
+    },
+    "companyItems": {
+      "about": "About",
+      "caseStudies": "Case Studies",
+      "contact": "Contact"
+    },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "notice": "Legal Notice",
+      "cookies": "Cookies"
+    }
   },
   "insights": {
     "heading": "Insights",
@@ -171,6 +217,36 @@
     "voices": {
       "cta": "Watch the interview",
       "ctaFallback": "View other interviews"
+    },
+    "newsletter": {
+      "heading": "Stay ahead of the mining conversation.",
+      "text": "Receive selected analysis, interviews and insights on mining, communication, ESG and reputation.",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "you@company.com",
+      "interestsLabel": "Areas of interest",
+      "submit": "Subscribe",
+      "sending": "Sending…",
+      "success": "Thank you. You are subscribed.",
+      "interests": {
+        "reputation": "Reputation",
+        "esg": "ESG & sustainability",
+        "communities": "Communities",
+        "markets": "Mining markets",
+        "media": "Media & communication"
+      },
+      "errors": {
+        "email": {
+          "invalid": "Please enter a valid email address.",
+          "tooLong": "That email address is too long."
+        },
+        "generic": "Something went wrong. Please try again.",
+        "unavailable": "Subscriptions are temporarily unavailable."
+      }
+    },
+    "finalCta": {
+      "heading": "Your reputation is part of your licence to operate.",
+      "text": "Let's discuss how Mining & Reputation can support your organisation.",
+      "cta": "Talk to our team"
     }
   },
   "formats": {

@@ -23,6 +23,22 @@
     "contact": {
       "title": "Contact",
       "description": "Parlons réputation, confiance et communication avec les parties prenantes dans le secteur minier."
+    },
+    "caseStudies": {
+      "title": "Études de cas",
+      "description": "Études de cas"
+    },
+    "privacy": {
+      "title": "Politique de confidentialité",
+      "description": "Politique de confidentialité"
+    },
+    "legal": {
+      "title": "Mentions légales",
+      "description": "Mentions légales"
+    },
+    "cookies": {
+      "title": "Cookies",
+      "description": "Cookies"
     }
   },
   "nav": {
@@ -39,7 +55,37 @@
     "talkToUs": "Parlons-en"
   },
   "footer": {
-    "rights": "Tous droits réservés."
+    "tagline": "Communication stratégique et réputation pour l'industrie minière.",
+    "rights": "Tous droits réservés.",
+    "expertise": "Expertises",
+    "insights": "Analyses",
+    "company": "Agence",
+    "follow": "Suivez-nous",
+    "newsletter": "Newsletter",
+    "expertiseItems": {
+      "crisis": "Communication de crise",
+      "media": "Relations médias",
+      "esg": "ESG & RSE",
+      "communities": "Relations communautés",
+      "financial": "Communication financière",
+      "digital": "Réputation numérique"
+    },
+    "insightsItems": {
+      "articles": "Articles",
+      "interviews": "Interviews",
+      "news": "Actualités minières",
+      "reports": "Rapports"
+    },
+    "companyItems": {
+      "about": "À propos",
+      "caseStudies": "Études de cas",
+      "contact": "Contact"
+    },
+    "legal": {
+      "privacy": "Politique de confidentialité",
+      "notice": "Mentions légales",
+      "cookies": "Cookies"
+    }
   },
   "insights": {
     "heading": "Analyses",
@@ -171,6 +217,36 @@
     "voices": {
       "cta": "Voir l'interview",
       "ctaFallback": "Voir d'autres interviews"
+    },
+    "newsletter": {
+      "heading": "Gardez une longueur d'avance sur le débat minier.",
+      "text": "Recevez une sélection d'analyses, d'interviews et d'éclairages sur les mines, la communication, l'ESG et la réputation.",
+      "emailLabel": "Adresse e-mail",
+      "emailPlaceholder": "vous@entreprise.com",
+      "interestsLabel": "Centres d'intérêt",
+      "submit": "S'abonner",
+      "sending": "Envoi en cours…",
+      "success": "Merci. Votre inscription est confirmée.",
+      "interests": {
+        "reputation": "Réputation",
+        "esg": "ESG & durabilité",
+        "communities": "Communautés",
+        "markets": "Marchés miniers",
+        "media": "Médias & communication"
+      },
+      "errors": {
+        "email": {
+          "invalid": "Veuillez saisir une adresse e-mail valide.",
+          "tooLong": "Cette adresse e-mail est trop longue."
+        },
+        "generic": "Une erreur est survenue. Veuillez réessayer.",
+        "unavailable": "Les inscriptions sont temporairement indisponibles."
+      }
+    },
+    "finalCta": {
+      "heading": "Votre réputation fait partie de votre licence d'exploitation.",
+      "text": "Discutons de la façon dont Mining & Reputation peut accompagner votre organisation.",
+      "cta": "Parler à notre équipe"
     }
   },
   "formats": {
