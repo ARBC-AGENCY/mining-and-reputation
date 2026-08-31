@@ -9,8 +9,8 @@
       "title": "À propos",
       "description": "Qui nous sommes et comment nous accompagnons exploitants, investisseurs et régulateurs du secteur minier."
     },
-    "insights": {
-      "title": "Analyses",
+    "blog": {
+      "title": "Blog & Médias",
       "description": "Analyses et commentaires sur la réputation, la licence d'exploitation et la confiance des parties prenantes dans le secteur minier."
     },
     "preloader": {
@@ -44,7 +44,6 @@
   "nav": {
     "home": "Accueil",
     "about": "À propos",
-    "insights": "Analyses",
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu",
     "primary": "Principale",
@@ -58,7 +57,7 @@
     "tagline": "Communication stratégique et réputation pour l'industrie minière.",
     "rights": "Tous droits réservés.",
     "expertise": "Expertises",
-    "insights": "Analyses",
+    "blog": "Blog",
     "company": "Agence",
     "follow": "Suivez-nous",
     "newsletter": "Newsletter",
@@ -70,7 +69,7 @@
       "financial": "Communication financière",
       "digital": "Réputation numérique"
     },
-    "insightsItems": {
+    "blogItems": {
       "articles": "Articles",
       "interviews": "Interviews",
       "news": "Actualités minières",
@@ -88,15 +87,15 @@
     },
     "poweredBy": "Une initiative de <arbc>ARBC Agency</arbc>"
   },
-  "insights": {
-    "heading": "Analyses",
+  "blog": {
+    "heading": "Blog & Médias",
     "intro": "Analyses sur la réputation et la confiance dans le secteur minier.",
     "empty": "Aucun article n'a encore été publié.",
     "readMore": "Lire la suite",
     "publishedOn": "Publié le {date, date, long}"
   },
   "article": {
-    "back": "Retour aux analyses",
+    "back": "Retour au blog",
     "byline": "Par {name}",
     "notFound": "Cet article est introuvable.",
     "download": "Télécharger",
@@ -104,8 +103,8 @@
     "readMore": "Lire la suite"
   },
   "contact": {
-    "heading": "Contact",
-    "intro": "Décrivez-nous votre situation et nous vous répondrons sous deux jours ouvrés.",
+    "heading": "Parlons de votre réputation.",
+    "intro": "Que vous prépariez une période d’exposition, que vous gériez un sujet en cours ou que vous construisiez une confiance durable avec les acteurs autour de vos opérations, nous serons heureux d’en discuter.",
     "fields": {
       "name": "Nom",
       "email": "E-mail",
@@ -134,7 +133,14 @@
       },
       "generic": "Une erreur est survenue. Veuillez réessayer ou nous écrire directement.",
       "unavailable": "Le formulaire de contact est temporairement indisponible."
-    }
+    },
+    "expectLabel": "Ce qui vous attend",
+    "expect": {
+      "reply": "Une réponse d’un consultant senior sous deux jours ouvrés.",
+      "confidential": "Votre demande est traitée en toute confidentialité.",
+      "noObligation": "Un premier échange, sans engagement."
+    },
+    "topicsLabel": "Sujets fréquents"
   },
   "home": {
     "hero": {
@@ -206,7 +212,7 @@
         }
       }
     },
-    "insights": {
+    "blog": {
       "heading": "Des analyses qui façonnent la conversation minière",
       "intro": "Analyses, points de vue et conversations sur les enjeux qui façonnent le secteur minier, la réputation et l'engagement des parties prenantes.",
       "featured": "À la une",
@@ -319,6 +325,153 @@
       "label": "ARBC",
       "heading": "Propulsé par <arbc>ARBC Agency</arbc>",
       "text": "Mining & Reputation est une initiative développée par <arbc>ARBC Agency</arbc> pour apporter une expertise spécialisée en communication et en réputation au secteur minier."
+    }
+  },
+  "expertise": {
+    "hero": {
+      "heading": "Une expertise en communication conçue pour l’industrie minière",
+      "text": "Les organisations minières font face à des enjeux de réputation que des stratégies de communication génériques ne peuvent pas traiter. Nous combinons des expertises spécialisées pour aider les organisations à anticiper les risques, renforcer la confiance et communiquer efficacement."
+    },
+    "labels": {
+      "manage": "Ce que nous vous aidons à gérer",
+      "approach": "Notre approche",
+      "related": "Articles liés",
+      "relatedEmpty": "Les articles sur cette expertise arrivent bientôt.",
+      "all": "Toutes les expertises",
+      "explore": "Découvrir cette expertise"
+    },
+    "cta": {
+      "heading": "Vous faites face à un enjeu de communication sensible ?",
+      "text": "Discutons de la façon dont nous pouvons accompagner votre organisation.",
+      "button": "Parler à notre équipe"
+    },
+    "areas": {
+      "crisis": {
+        "title": "Communication de crise",
+        "tagline": "Protéger la confiance quand la pression est maximale.",
+        "intro": "Les opérations minières peuvent être confrontées à des incidents, des tensions avec les communautés, des enjeux réglementaires, des préoccupations environnementales ou des récits médiatiques qui évoluent rapidement. Une communication de crise efficace se prépare bien avant la crise.",
+        "capabilities": [
+          "Préparation aux crises",
+          "Analyse des risques réputationnels",
+          "Plans de communication de crise",
+          "Réponse aux médias",
+          "Messages des dirigeants",
+          "Communication avec les parties prenantes",
+          "Veille numérique",
+          "Reconstruction de la réputation après crise"
+        ],
+        "approach": [
+          "Anticiper",
+          "Préparer",
+          "Répondre",
+          "Reconstruire"
+        ]
+      },
+      "media": {
+        "title": "Relations médias & stratégie de porte-parole",
+        "tagline": "Être représenté avec clarté et autorité.",
+        "intro": "La couverture du secteur minier est façonnée par des journalistes, des analystes et des commentateurs qui ont rarement le temps de chercher le contexte. Des relations médias solides et des porte-parole bien préparés déterminent si votre position est entendue avec justesse.",
+        "capabilities": [
+          "Stratégie médias",
+          "Relations presse",
+          "Formation des porte-parole",
+          "Préparation aux interviews",
+          "Supports de presse",
+          "Visibilité des dirigeants",
+          "Placement éditorial",
+          "Analyse de la couverture"
+        ],
+        "approach": [
+          "Cartographier",
+          "Préparer",
+          "Engager",
+          "Mesurer"
+        ]
+      },
+      "esg": {
+        "title": "ESG, RSE & licence sociale d’exploitation",
+        "tagline": "Transformer les engagements en récits crédibles.",
+        "intro": "Les investisseurs, les régulateurs et les communautés jugent de plus en plus les entreprises minières sur des preuves plutôt que sur des intentions. La communication ESG doit relier ce que fait une organisation à ce que ses parties prenantes peuvent vérifier.",
+        "capabilities": [
+          "Récit et positionnement ESG",
+          "Appui au reporting de durabilité",
+          "Évaluation de la licence sociale",
+          "Information des parties prenantes",
+          "Valorisation des impacts",
+          "Communication réglementaire",
+          "Messages vérifiables",
+          "Communication de la performance"
+        ],
+        "approach": [
+          "Évaluer",
+          "Cadrer",
+          "Prouver",
+          "Communiquer"
+        ]
+      },
+      "community": {
+        "title": "Relations avec les communautés",
+        "tagline": "Construire le dialogue là où les opérations rencontrent les populations.",
+        "intro": "Les communautés locales vivent au quotidien la réalité d’un projet minier. Un dialogue soutenu et honnête transforme la consultation en confiance, et la confiance en licence d’exploitation durable.",
+        "capabilities": [
+          "Cartographie des parties prenantes",
+          "Plans d’engagement communautaire",
+          "Consultation locale",
+          "Traitement des doléances",
+          "Supports d’information locale",
+          "Relations médias locaux",
+          "Formation à l’engagement",
+          "Suivi du dialogue"
+        ],
+        "approach": [
+          "Écouter",
+          "Cartographier",
+          "Engager",
+          "Pérenniser"
+        ]
+      },
+      "financial": {
+        "title": "Communication financière",
+        "tagline": "Communiquer la valeur à ceux qui la financent.",
+        "intro": "Les investisseurs, les prêteurs et les partenaires évaluent les projets miniers à travers l’information financière, les prévisions et la crédibilité du management. La communication financière doit être précise, cohérente et alignée sur la réalité opérationnelle.",
+        "capabilities": [
+          "Messages aux investisseurs",
+          "Communication des résultats et prévisions",
+          "Récit pour les marchés de capitaux",
+          "Supports analystes et investisseurs",
+          "Communication des jalons de projet",
+          "Relations médias financiers",
+          "Positionnement du management",
+          "Cohérence de l’information"
+        ],
+        "approach": [
+          "Aligner",
+          "Structurer",
+          "Communiquer",
+          "Réviser"
+        ]
+      },
+      "digital": {
+        "title": "Réputation numérique & veille",
+        "tagline": "Savoir comment vous êtes perçu avant que cela ne compte.",
+        "intro": "La perception se forme désormais en ligne, souvent plus vite qu’une organisation ne peut réagir. Une veille continue transforme des signaux dispersés en alerte précoce, et l’alerte précoce en temps pour agir.",
+        "capabilities": [
+          "Audit de réputation en ligne",
+          "Veille médias et réseaux sociaux",
+          "Détection et alerte sur les signaux",
+          "Visibilité dans les moteurs de recherche",
+          "Analyse des récits numériques",
+          "Stratégie de contenu",
+          "Cadrage de la modération",
+          "Tableaux de bord de reporting"
+        ],
+        "approach": [
+          "Surveiller",
+          "Détecter",
+          "Analyser",
+          "Agir"
+        ]
+      }
     }
   }
 }

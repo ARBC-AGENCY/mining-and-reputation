@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { InsightsTabs } from "@/components/insights/InsightsTabs";
-import { TAB_VALUES, type TabValue } from "@/lib/insights-tabs";
-import { PostCard, type PostCardData } from "@/components/insights/PostCard";
+import { BlogTabs } from "@/components/blog/BlogTabs";
+import { TAB_VALUES, type TabValue } from "@/lib/blog-tabs";
+import { PostCard, type PostCardData } from "@/components/blog/PostCard";
 import type { Locale } from "@/i18n/routing";
 import { alternatesFor } from "@/lib/metadata";
 import { sanityFetch } from "@/sanity/lib/live";
@@ -20,13 +20,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "metadata" });
 
   return {
-    title: t("insights.title"),
-    description: t("insights.description"),
-    alternates: alternatesFor(locale, "/insights"),
+    title: t("blog.title"),
+    description: t("blog.description"),
+    alternates: alternatesFor(locale, "/blog"),
   };
 }
 
-export default async function InsightsPage({ params, searchParams }: Props) {
+export default async function BlogPage({ params, searchParams }: Props) {
   const { locale } = await params;
   const { type } = await searchParams;
   setRequestLocale(locale);
@@ -37,7 +37,7 @@ export default async function InsightsPage({ params, searchParams }: Props) {
     : "all";
   const format = tab === "all" ? null : tab;
 
-  const t = await getTranslations("insights");
+  const t = await getTranslations("blog");
   const { data } = await sanityFetch({
     query: POSTS_QUERY,
     params: { format, from: 0, to: PAGE_SIZE },
@@ -54,7 +54,7 @@ export default async function InsightsPage({ params, searchParams }: Props) {
       </p>
 
       <div className="mt-10 md:mt-12">
-        <InsightsTabs current={tab} />
+        <BlogTabs current={tab} />
       </div>
 
       {posts.length === 0 ? (

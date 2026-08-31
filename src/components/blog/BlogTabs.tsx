@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useRouter } from "@/i18n/navigation";
-import { TAB_VALUES, type TabValue } from "@/lib/insights-tabs";
+import { TAB_VALUES, type TabValue } from "@/lib/blog-tabs";
 
 
 /**
@@ -12,7 +12,7 @@ import { TAB_VALUES, type TabValue } from "@/lib/insights-tabs";
  * server re-queries and every view is linkable and shareable. Arriving at
  * ?type=article from the homepage therefore lands with Articles highlighted.
  */
-export function InsightsTabs({ current }: { current: TabValue }) {
+export function BlogTabs({ current }: { current: TabValue }) {
   const t = useTranslations("formats");
   const router = useRouter();
   const listRef = useRef<HTMLDivElement>(null);
@@ -32,7 +32,7 @@ export function InsightsTabs({ current }: { current: TabValue }) {
     <Tabs
       value={current}
       onValueChange={(value) =>
-        router.push(value === "all" ? "/insights" : `/insights?type=${value}`)
+        router.push(value === "all" ? "/blog" : `/blog?type=${value}`)
       }
       className="w-full"
     >

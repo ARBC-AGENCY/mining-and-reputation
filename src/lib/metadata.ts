@@ -6,7 +6,7 @@ import { siteUrl } from "./site";
  * Builds canonical + hreflang alternates for a locale-prefixed page.
  *
  * `path` is the pathname WITHOUT the locale segment ("" for the home page,
- * "/insights" for the insights index, and so on).
+ * "/blog" for the blog index, and so on).
  */
 export function alternatesFor(
   locale: Locale,

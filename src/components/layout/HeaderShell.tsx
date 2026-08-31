@@ -30,7 +30,7 @@ export function HeaderShell({ strings }: { strings: HeaderStrings }) {
   const pathname = usePathname();
 
   // usePathname() from @/i18n/navigation is already locale-stripped, so these
-  // compare against plain hrefs. Prefix match so /insights/<slug> keeps the
+  // compare against plain hrefs. Prefix match so /blog/<slug> keeps the
   // "Blog" item lit.
   const isActive = (href: string) =>
     href === "/"

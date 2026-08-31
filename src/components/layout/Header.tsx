@@ -14,8 +14,7 @@ export async function Header() {
     links: [
       { href: "/expertise", label: t("expertise") },
       { href: "/about", label: t("about") },
-      // Route stays /insights (already wired to Sanity); label is "Blog" for now.
-      { href: "/insights", label: t("blog") },
+      { href: "/blog", label: t("blog") },
     ],
   };
 

@@ -4,7 +4,7 @@ import { HomeHero } from "@/components/hero/HomeHero";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ExpertiseSection } from "@/components/sections/ExpertiseSection";
 import { SectorsSection } from "@/components/sections/SectorsSection";
-import { InsightsSection } from "@/components/sections/InsightsSection";
+import { BlogSection } from "@/components/sections/BlogSection";
 import { MiningVoicesSection } from "@/components/sections/MiningVoicesSection";
 import { NewsletterSection } from "@/components/sections/NewsletterSection";
 import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
@@ -77,7 +77,7 @@ export default async function Home({ params }: Props) {
 
       <SectorsSection />
 
-      <InsightsSection />
+      <BlogSection />
 
       <MiningVoicesSection />
 

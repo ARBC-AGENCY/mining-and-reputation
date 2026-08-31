@@ -14,7 +14,7 @@ const EXPERTISE_ITEMS = [
 ] as const;
 
 // Each maps to a hub tab, so these deep-link rather than dumping on the index.
-const INSIGHTS_ITEMS = [
+const BLOG_ITEMS = [
   { key: "articles", type: "article" },
   { key: "interviews", type: "interview" },
   { key: "news", type: "news" },
@@ -78,13 +78,13 @@ export async function Footer() {
             </ul>
           </nav>
 
-          <nav aria-label={t("insights")}>
-            <h2 className={heading}>{t("insights")}</h2>
+          <nav aria-label={t("blog")}>
+            <h2 className={heading}>{t("blog")}</h2>
             <ul className="mt-5 space-y-3">
-              {INSIGHTS_ITEMS.map(({ key, type }) => (
+              {BLOG_ITEMS.map(({ key, type }) => (
                 <li key={key}>
-                  <Link href={`/insights?type=${type}`} className={item}>
-                    {t(`insightsItems.${key}` as "insightsItems.articles")}
+                  <Link href={`/blog?type=${type}`} className={item}>
+                    {t(`blogItems.${key}` as "blogItems.articles")}
                   </Link>
                 </li>
               ))}

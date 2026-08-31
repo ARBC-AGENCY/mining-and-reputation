@@ -108,7 +108,7 @@ export function MiningVoicesShowcase({ items }: { items: VoicesItem[] }) {
               )}
               {latest.slug && (
                 <Link
-                  href={`/insights/${latest.slug}`}
+                  href={`/blog/${latest.slug}`}
                   className="text-grey-light/70 inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-white"
                 >
                   {ta("readMore")}
@@ -116,7 +116,7 @@ export function MiningVoicesShowcase({ items }: { items: VoicesItem[] }) {
                 </Link>
               )}
               <Link
-                href="/insights?type=interview"
+                href="/blog?type=interview"
                 className="text-grey-light/70 inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-white"
               >
                 {t("ctaFallback")}

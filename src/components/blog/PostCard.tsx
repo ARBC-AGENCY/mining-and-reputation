@@ -55,7 +55,7 @@ export async function PostCard({ post }: { post: PostCardData }) {
 
   return (
     <Link
-      href={`/insights/${post.slug}`}
+      href={`/blog/${post.slug}`}
       className="group flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 bg-white/[0.03] transition-colors duration-500 hover:border-[#F7C15D]/40"
     >
       {isResource && !image ? (

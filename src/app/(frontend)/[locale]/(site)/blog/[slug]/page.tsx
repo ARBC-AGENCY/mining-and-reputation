@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: article.title,
     description: article.excerpt ?? undefined,
-    alternates: alternatesFor(locale, `/insights/${slug}`),
+    alternates: alternatesFor(locale, `/blog/${slug}`),
     openGraph: {
       type: "article",
       title: article.title ?? undefined,
@@ -54,7 +54,7 @@ export default async function ArticlePage({ params }: Props) {
   setRequestLocale(locale);
 
   const t = await getTranslations("article");
-  const tInsights = await getTranslations("insights");
+  const tBlog = await getTranslations("blog");
   const { data: article } = await sanityFetch({
     query: POST_QUERY,
     params: { slug },
@@ -82,7 +82,7 @@ export default async function ArticlePage({ params }: Props) {
   return (
     <article className="mx-auto max-w-3xl px-6 pb-20 pt-36">
       <Link
-        href="/insights"
+        href="/blog"
         className="text-grey-light/60 hover:text-gold text-sm transition-colors"
       >
         {t("back")}
@@ -103,7 +103,7 @@ export default async function ArticlePage({ params }: Props) {
         {article.author?.name && <span>{t("byline", { name: article.author.name })}</span>}
         {article.publishedAt && (
           <span>
-            {tInsights("publishedOn", { date: new Date(article.publishedAt) })}
+            {tBlog("publishedOn", { date: new Date(article.publishedAt) })}
           </span>
         )}
       </div>

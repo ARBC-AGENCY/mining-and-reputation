@@ -31,8 +31,8 @@ function cover(image: unknown, w: number, h: number) {
   }
 }
 
-export async function InsightsSection() {
-  const t = await getTranslations("home.insights");
+export async function BlogSection() {
+  const t = await getTranslations("home.blog");
   const tf = await getTranslations("formats");
 
   const { data: featured } = await sanityFetch({ query: FEATURED_POST_QUERY });
@@ -71,7 +71,7 @@ export async function InsightsSection() {
             {/* Featured */}
             <Reveal>
             <Link
-              href={`/insights/${hero.slug}`}
+              href={`/blog/${hero.slug}`}
               className="group mt-14 grid gap-6 overflow-hidden rounded-[18px] border border-white/10 bg-white/[0.03] transition-colors duration-500 hover:border-[#F7C15D]/40 md:mt-16 lg:grid-cols-2 lg:gap-0"
             >
               <div className="relative aspect-[16/10] w-full overflow-hidden lg:aspect-auto lg:h-full lg:min-h-[380px]">
@@ -126,7 +126,7 @@ export async function InsightsSection() {
                 {cards.map((post, i) => (
                   <Reveal key={post._id} delay={i * 0.08} className="h-full">
                   <Link
-                    href={`/insights/${post.slug}`}
+                    href={`/blog/${post.slug}`}
                     className="group flex flex-col overflow-hidden rounded-[18px] border border-white/10 bg-white/[0.03] transition-colors duration-500 hover:border-[#F7C15D]/40"
                   >
                     <div className="relative aspect-[16/10] w-full overflow-hidden">
@@ -164,7 +164,7 @@ export async function InsightsSection() {
         )}
 
         <Link
-          href="/insights?type=article"
+          href="/blog?type=article"
           className="text-gold mt-12 inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-white"
         >
           {t("cta")}

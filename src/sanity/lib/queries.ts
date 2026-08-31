@@ -85,3 +85,15 @@ export const POST_SLUGS_QUERY = defineQuery(`
   *[_type == "post" && defined(slug.current)].slug.current
 `);
 
+
+/** Posts tagged with a given expertise, for the expertise detail pages. */
+export const RELATED_POSTS_QUERY = defineQuery(`
+  *[
+    _type == "post" &&
+    defined(slug.current) &&
+    count(relatedExpertise[@->slug.current == $expertise]) > 0
+  ]
+  | order(publishedAt desc)[0...3] {
+    ${CARD_FIELDS}
+  }
+`);

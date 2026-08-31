@@ -9,8 +9,8 @@
       "title": "About",
       "description": "Who we are and how we work with operators, investors and regulators across the mining sector."
     },
-    "insights": {
-      "title": "Insights",
+    "blog": {
+      "title": "Blog & Media",
       "description": "Analysis and commentary on reputation, licence to operate, and stakeholder trust in mining."
     },
     "preloader": {
@@ -44,7 +44,6 @@
   "nav": {
     "home": "Home",
     "about": "About",
-    "insights": "Insights",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "primary": "Primary",
@@ -58,7 +57,7 @@
     "tagline": "Strategic communication and reputation for the mining industry.",
     "rights": "All rights reserved.",
     "expertise": "Expertise",
-    "insights": "Insights",
+    "blog": "Blog",
     "company": "Company",
     "follow": "Follow",
     "newsletter": "Newsletter",
@@ -70,7 +69,7 @@
       "financial": "Financial Communication",
       "digital": "Digital Reputation"
     },
-    "insightsItems": {
+    "blogItems": {
       "articles": "Articles",
       "interviews": "Interviews",
       "news": "Mining News",
@@ -88,15 +87,15 @@
     },
     "poweredBy": "An initiative by <arbc>ARBC Agency</arbc>"
   },
-  "insights": {
-    "heading": "Insights",
+  "blog": {
+    "heading": "Blog & Media",
     "intro": "Analysis on reputation and trust in the mining sector.",
     "empty": "No articles have been published yet.",
     "readMore": "Read more",
     "publishedOn": "Published {date, date, long}"
   },
   "article": {
-    "back": "Back to insights",
+    "back": "Back to blog",
     "byline": "By {name}",
     "notFound": "That article could not be found.",
     "download": "Download",
@@ -104,8 +103,8 @@
     "readMore": "Read more"
   },
   "contact": {
-    "heading": "Contact",
-    "intro": "Tell us about your situation and we will respond within two working days.",
+    "heading": "Let us talk about your reputation.",
+    "intro": "Whether you are preparing for scrutiny, managing a live issue or building long-term trust with the people around your operations, we are happy to discuss what would help.",
     "fields": {
       "name": "Name",
       "email": "Email",
@@ -134,7 +133,14 @@
       },
       "generic": "Something went wrong. Please try again, or email us directly.",
       "unavailable": "The contact form is temporarily unavailable."
-    }
+    },
+    "expectLabel": "What to expect",
+    "expect": {
+      "reply": "A reply from a senior consultant within two working days.",
+      "confidential": "Your enquiry is treated in confidence.",
+      "noObligation": "An initial conversation, with no obligation."
+    },
+    "topicsLabel": "Common topics"
   },
   "home": {
     "hero": {
@@ -206,14 +212,14 @@
         }
       }
     },
-    "insights": {
-      "heading": "Insights shaping the mining conversation",
+    "blog": {
+      "heading": "Analysis shaping the mining conversation",
       "intro": "Analysis, perspectives and conversations on the issues shaping mining, reputation and stakeholder engagement.",
       "featured": "Featured",
       "latest": "Latest",
       "readArticle": "Read article",
       "cta": "Explore all articles",
-      "empty": "The first insights are on their way."
+      "empty": "The first articles are on their way."
     },
     "voices": {
       "cta": "Watch the interview",
@@ -221,7 +227,7 @@
     },
     "newsletter": {
       "heading": "Stay ahead of the mining conversation.",
-      "text": "Receive selected analysis, interviews and insights on mining, communication, ESG and reputation.",
+      "text": "Receive selected analysis, interviews and perspectives on mining, communication, ESG and reputation.",
       "emailLabel": "Email address",
       "emailPlaceholder": "you@company.com",
       "interestsLabel": "Areas of interest",
@@ -319,6 +325,153 @@
       "label": "ARBC",
       "heading": "Powered by <arbc>ARBC Agency</arbc>",
       "text": "Mining & Reputation is an initiative developed by <arbc>ARBC Agency</arbc> to provide specialised communication and reputation expertise to the mining sector."
+    }
+  },
+  "expertise": {
+    "hero": {
+      "heading": "Communication expertise built for the mining industry",
+      "text": "Mining organisations face reputation challenges that cannot be addressed with generic communication strategies. We combine specialised expertise to help organisations anticipate risk, strengthen trust and communicate effectively."
+    },
+    "labels": {
+      "manage": "What we help you manage",
+      "approach": "Our approach",
+      "related": "Related articles",
+      "relatedEmpty": "Articles on this expertise are on their way.",
+      "all": "All expertise",
+      "explore": "Explore this expertise"
+    },
+    "cta": {
+      "heading": "Facing a sensitive communications issue?",
+      "text": "Let us discuss how we can support your organisation.",
+      "button": "Talk to our team"
+    },
+    "areas": {
+      "crisis": {
+        "title": "Crisis Communication",
+        "tagline": "Protect trust when the pressure is highest.",
+        "intro": "Mining operations can face incidents, community tensions, regulatory issues, environmental concerns or rapidly evolving media narratives. Effective crisis communication requires preparation long before a crisis begins.",
+        "capabilities": [
+          "Crisis preparedness",
+          "Reputational risk analysis",
+          "Crisis communication plans",
+          "Media response",
+          "Executive messaging",
+          "Stakeholder communication",
+          "Digital monitoring",
+          "Post-crisis reputation recovery"
+        ],
+        "approach": [
+          "Anticipate",
+          "Prepare",
+          "Respond",
+          "Recover"
+        ]
+      },
+      "media": {
+        "title": "Media Relations & Spokesperson Strategy",
+        "tagline": "Be represented with clarity and authority.",
+        "intro": "Coverage of mining is shaped by journalists, analysts and commentators who rarely have time to seek context. Strong media relationships and well-prepared spokespeople determine whether your position is heard accurately.",
+        "capabilities": [
+          "Media strategy",
+          "Press relations",
+          "Spokesperson training",
+          "Interview preparation",
+          "Press materials",
+          "Executive visibility",
+          "Editorial placement",
+          "Coverage analysis"
+        ],
+        "approach": [
+          "Map",
+          "Prepare",
+          "Engage",
+          "Measure"
+        ]
+      },
+      "esg": {
+        "title": "ESG, CSR & Social Licence to Operate",
+        "tagline": "Turn commitments into credible narratives.",
+        "intro": "Investors, regulators and communities increasingly judge mining companies on evidence rather than intention. ESG communication has to connect what an organisation does with what its stakeholders can verify.",
+        "capabilities": [
+          "ESG narrative and positioning",
+          "Sustainability reporting support",
+          "Social licence assessment",
+          "Stakeholder disclosure",
+          "Impact storytelling",
+          "Regulatory communication",
+          "Assurance-ready messaging",
+          "Performance communication"
+        ],
+        "approach": [
+          "Assess",
+          "Frame",
+          "Evidence",
+          "Communicate"
+        ]
+      },
+      "community": {
+        "title": "Community Relations",
+        "tagline": "Build dialogue where operations meet people.",
+        "intro": "Local communities live with the daily reality of a mining project. Sustained, honest dialogue is what turns consultation into trust, and trust into a durable licence to operate.",
+        "capabilities": [
+          "Stakeholder mapping",
+          "Community engagement plans",
+          "Local consultation",
+          "Grievance communication",
+          "Community information materials",
+          "Local media relations",
+          "Engagement training",
+          "Dialogue monitoring"
+        ],
+        "approach": [
+          "Listen",
+          "Map",
+          "Engage",
+          "Sustain"
+        ]
+      },
+      "financial": {
+        "title": "Financial Communication",
+        "tagline": "Communicate value to the people who fund it.",
+        "intro": "Investors, lenders and partners assess mining projects through disclosure, guidance and management credibility. Financial communication must be precise, consistent and aligned with operational reality.",
+        "capabilities": [
+          "Investor messaging",
+          "Results and guidance communication",
+          "Capital markets narrative",
+          "Analyst and investor materials",
+          "Project milestone communication",
+          "Financial media relations",
+          "Management positioning",
+          "Disclosure consistency"
+        ],
+        "approach": [
+          "Align",
+          "Structure",
+          "Communicate",
+          "Review"
+        ]
+      },
+      "digital": {
+        "title": "Digital Reputation & Monitoring",
+        "tagline": "Know how you are seen before it matters.",
+        "intro": "Perception now forms online, often faster than an organisation can respond. Continuous monitoring turns scattered signals into early warning, and early warning into time to act.",
+        "capabilities": [
+          "Online reputation audit",
+          "Media and social monitoring",
+          "Issue detection and alerting",
+          "Search visibility",
+          "Digital narrative analysis",
+          "Content strategy",
+          "Community moderation guidance",
+          "Reporting dashboards"
+        ],
+        "approach": [
+          "Monitor",
+          "Detect",
+          "Analyse",
+          "Act"
+        ]
+      }
     }
   }
 }
