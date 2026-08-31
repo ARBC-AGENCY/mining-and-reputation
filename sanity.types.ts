@@ -179,6 +179,31 @@ export type Category = {
   description?: string;
 };
 
+export type SiteSettings = {
+  _id: string;
+  _type: "siteSettings";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  voices?: {
+    label?: LocaleString;
+    heading?: LocaleString;
+    text?: LocaleText;
+  };
+};
+
+export type LocaleText = {
+  _type: "localeText";
+  en?: string;
+  fr?: string;
+};
+
+export type LocaleString = {
+  _type: "localeString";
+  en?: string;
+  fr?: string;
+};
+
 export type Seo = {
   _type: "seo";
   metaTitle?: string;
@@ -303,6 +328,9 @@ export type AllSanitySchemaTypes =
   | Expertise
   | Author
   | Category
+  | SiteSettings
+  | LocaleText
+  | LocaleString
   | Seo
   | SanityImagePaletteSwatch
   | SanityImagePalette
@@ -525,6 +553,26 @@ export type POST_QUERY_RESULT = {
 // Query: *[_type == "post" && defined(slug.current)].slug.current
 export type POST_SLUGS_QUERY_RESULT = Array<string | null>;
 
+// Source: src/sanity/lib/queries.ts
+// Variable: SITE_SETTINGS_QUERY
+// Query: *[_type == "siteSettings"][0]{    voices{      label{ en, fr },      heading{ en, fr },      text{ en, fr }    }  }
+export type SITE_SETTINGS_QUERY_RESULT = {
+  voices: {
+    label: {
+      en: string | null;
+      fr: string | null;
+    } | null;
+    heading: {
+      en: string | null;
+      fr: string | null;
+    } | null;
+    text: {
+      en: string | null;
+      fr: string | null;
+    } | null;
+  } | null;
+} | null;
+
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
@@ -537,5 +585,6 @@ declare module "@sanity/client" {
     '\n  *[_type == "post" && format == "interview" && defined(slug.current)]\n    | order(publishedAt desc)[0] {\n    \n  _id,\n  format,\n  title,\n  "slug": slug.current,\n  excerpt,\n  publishedAt,\n  coverImage,\n  videoUrl,\n  author->{ name },\n  categories[]->{ title, "slug": slug.current }\n\n  }\n': LATEST_INTERVIEW_QUERY_RESULT;
     '\n  *[_type == "post" && slug.current == $slug][0] {\n    \n  _id,\n  format,\n  title,\n  "slug": slug.current,\n  excerpt,\n  publishedAt,\n  coverImage,\n  videoUrl,\n  author->{ name },\n  categories[]->{ title, "slug": slug.current }\n,\n    body,\n    file{ asset->{ url, originalFilename, size } },\n    relatedExpertise[]->{ title, "slug": slug.current }\n  }\n': POST_QUERY_RESULT;
     '\n  *[_type == "post" && defined(slug.current)].slug.current\n': POST_SLUGS_QUERY_RESULT;
+    '\n  *[_type == "siteSettings"][0]{\n    voices{\n      label{ en, fr },\n      heading{ en, fr },\n      text{ en, fr }\n    }\n  }\n': SITE_SETTINGS_QUERY_RESULT;
   }
 }

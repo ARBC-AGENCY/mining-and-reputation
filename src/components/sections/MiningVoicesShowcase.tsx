@@ -15,12 +15,21 @@ export type VoicesItem = {
   videoUrl: string | null;
 };
 
+export type VoicesCopy = {
+  label: string;
+  heading: string;
+  text: string;
+};
+
 export function MiningVoicesShowcase({
   items,
   fallbackPoster,
+  copy,
 }: {
   items: VoicesItem[];
   fallbackPoster: string;
+  /** Resolved server-side: CMS value if set, else the translation file. */
+  copy: VoicesCopy;
 }) {
   const t = useTranslations("home.voices");
   const [openAt, setOpenAt] = useState<number | null>(null);
@@ -58,7 +67,7 @@ export function MiningVoicesShowcase({
                   type="button"
                   onClick={() => setOpenAt(0)}
                   aria-label={t("cta")}
-                  className="grid size-11 place-items-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md transition-colors duration-500 hover:border-[#F7C15D] hover:bg-[#F7C15D]/20 md:size-14"
+                  className="grid size-11 cursor-pointer place-items-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md transition-colors duration-500 hover:border-[#F7C15D] hover:bg-[#F7C15D]/20 md:size-14"
                 >
                   <Play
                     className="size-4 fill-white text-white md:size-5"
@@ -74,15 +83,15 @@ export function MiningVoicesShowcase({
                 </span>
               )}
               <span className="text-xs font-medium tracking-[0.25em] text-[#F7C15D] uppercase">
-                {t("label")}
+                {copy.label}
               </span>
             </div>
 
             <h2 className="font-display mt-7 max-w-3xl text-2xl leading-tight text-balance text-white md:text-4xl lg:text-5xl">
-              {t("heading")}
+              {copy.heading}
             </h2>
             <p className="text-grey-light/80 mt-5 max-w-2xl text-sm leading-relaxed text-pretty md:text-base">
-              {t("text")}
+              {copy.text}
             </p>
 
             {latest?.title && (
@@ -97,7 +106,7 @@ export function MiningVoicesShowcase({
                 <button
                   type="button"
                   onClick={() => setOpenAt(0)}
-                  className="text-gold inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-white"
+                  className="text-gold inline-flex cursor-pointer items-center gap-2 text-sm font-medium transition-colors hover:text-white"
                 >
                   {t("cta")}
                   <Play className="size-3.5 fill-current" aria-hidden="true" />

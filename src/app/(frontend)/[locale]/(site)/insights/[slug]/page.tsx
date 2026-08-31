@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PortableText } from "@portabletext/react";
+import { Download } from "lucide-react";
+import { PortableBody } from "@/components/portable/PortableBody";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { VideoEmbed } from "@/components/media/VideoEmbed";
+import { urlFor } from "@/sanity/lib/image";
 import { routing, type Locale } from "@/i18n/routing";
 import { alternatesFor } from "@/lib/metadata";
 import { client } from "@/sanity/lib/client";
@@ -61,6 +64,21 @@ export default async function ArticlePage({ params }: Props) {
     notFound();
   }
 
+  let poster: string | null = null;
+  if (article.coverImage) {
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      poster = urlFor(article.coverImage as any)
+        .width(1280)
+        .height(720)
+        .fit("crop")
+        .auto("format")
+        .url();
+    } catch {
+      poster = null;
+    }
+  }
+
   return (
     <article className="mx-auto max-w-3xl px-6 pb-20 pt-36">
       <Link
@@ -83,9 +101,52 @@ export default async function ArticlePage({ params }: Props) {
         )}
       </div>
 
+      {/* Interviews lead with the video. Click-to-play, so nothing loads from
+          YouTube or Vimeo until the viewer asks for it. */}
+      {article.videoUrl && (
+        <div className="mt-10">
+          <VideoEmbed
+            url={article.videoUrl}
+            poster={poster}
+            title={article.title ?? null}
+          />
+        </div>
+      )}
+
+      {/* Reports carry a downloadable file — surface it above the body so it
+          isn't buried under the text. */}
+      {article.file?.asset?.url && (
+        <a
+          href={article.file.asset.url}
+          download
+          className="border-gold/40 bg-gold/10 hover:border-gold group mt-10 flex items-center justify-between gap-4 rounded-[14px] border px-5 py-4 transition-colors"
+        >
+          <span className="min-w-0">
+            <span className="block truncate text-sm font-medium text-white">
+              {article.file.asset.originalFilename ?? article.title}
+            </span>
+            <span className="text-grey-light/60 mt-1 block text-xs">
+              {t("downloadHint", {
+                ext: (article.file.asset.originalFilename ?? "")
+                  .split(".")
+                  .pop()
+                  ?.toUpperCase() || "FILE",
+                size: article.file.asset.size
+                  ? `${Math.max(1, Math.round(article.file.asset.size / 1024))} KB`
+                  : "",
+              })}
+            </span>
+          </span>
+          <span className="text-gold inline-flex shrink-0 items-center gap-2 text-sm font-medium transition-colors group-hover:text-white">
+            {t("download")}
+            <Download className="size-4" aria-hidden="true" />
+          </span>
+        </a>
+      )}
+
       {article.body && (
-        <div className="prose-invert text-grey-light/85 mt-12 flex flex-col gap-6">
-          <PortableText value={article.body} />
+        <div className="mt-12 flex flex-col gap-6">
+          <PortableBody value={article.body} />
         </div>
       )}
     </article>

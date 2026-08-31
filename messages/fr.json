@@ -51,7 +51,10 @@
   "article": {
     "back": "Retour aux analyses",
     "byline": "Par {name}",
-    "notFound": "Cet article est introuvable."
+    "notFound": "Cet article est introuvable.",
+    "download": "Télécharger",
+    "downloadHint": "{ext} · {size}",
+    "readMore": "Lire la suite"
   },
   "contact": {
     "heading": "Contact",

@@ -6,5 +6,8 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: true, // Set to false if statically generating pages, using ISR or tag-based revalidation
+  // false: every route here is dynamic and driven by the Live Content API,
+  // so the CDN's cache only adds staleness — newly published content would
+  // not appear for up to a minute.
+  useCdn: false,
 })

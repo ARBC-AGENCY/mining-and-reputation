@@ -51,7 +51,10 @@
   "article": {
     "back": "Back to insights",
     "byline": "By {name}",
-    "notFound": "That article could not be found."
+    "notFound": "That article could not be found.",
+    "download": "Download",
+    "downloadHint": "{ext} · {size}",
+    "readMore": "Read more"
   },
   "contact": {
     "heading": "Contact",

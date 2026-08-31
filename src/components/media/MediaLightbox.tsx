@@ -110,7 +110,7 @@ export function MediaLightbox({ items, openAt, onClose }: Props) {
           type="button"
           onClick={onClose}
           aria-label={t("close")}
-          className="text-grey-light hover:text-gold rounded-full p-2 transition-colors"
+          className="text-grey-light hover:text-gold cursor-pointer rounded-full p-2 transition-colors"
         >
           <X className="size-6" aria-hidden="true" />
         </button>
@@ -126,7 +126,7 @@ export function MediaLightbox({ items, openAt, onClose }: Props) {
             type="button"
             onClick={() => go(-1)}
             aria-label={t("previous")}
-            className="mr-2 grid size-11 shrink-0 place-items-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-colors hover:border-[#F7C15D] hover:text-[#F7C15D] md:mr-6"
+            className="mr-2 grid size-11 shrink-0 cursor-pointer place-items-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-colors hover:border-[#F7C15D] hover:text-[#F7C15D] md:mr-6"
           >
             <ChevronLeft className="size-5" aria-hidden="true" />
           </button>
@@ -169,7 +169,7 @@ export function MediaLightbox({ items, openAt, onClose }: Props) {
             type="button"
             onClick={() => go(1)}
             aria-label={t("next")}
-            className="ml-2 grid size-11 shrink-0 place-items-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-colors hover:border-[#F7C15D] hover:text-[#F7C15D] md:ml-6"
+            className="ml-2 grid size-11 shrink-0 cursor-pointer place-items-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-colors hover:border-[#F7C15D] hover:text-[#F7C15D] md:ml-6"
           >
             <ChevronRight className="size-5" aria-hidden="true" />
           </button>

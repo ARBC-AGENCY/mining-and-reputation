@@ -189,7 +189,7 @@ export function HeaderShell({ strings }: { strings: HeaderStrings }) {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? strings.closeMenu : strings.openMenu}
-          className="-mr-2 p-2 text-white transition-colors hover:text-[#F7C15D] md:hidden"
+          className="-mr-2 cursor-pointer p-2 text-white transition-colors hover:text-[#F7C15D] md:hidden"
         >
           {open ? (
             <X className="size-6" aria-hidden="true" />

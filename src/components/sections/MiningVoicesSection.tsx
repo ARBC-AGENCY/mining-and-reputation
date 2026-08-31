@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/motion/Reveal";
 import {
   MiningVoicesShowcase,
@@ -7,7 +7,7 @@ import {
 import { parseVideo } from "@/lib/video";
 import { urlFor } from "@/sanity/lib/image";
 import { sanityFetch } from "@/sanity/lib/live";
-import { INTERVIEWS_QUERY } from "@/sanity/lib/queries";
+import { INTERVIEWS_QUERY, SITE_SETTINGS_QUERY } from "@/sanity/lib/queries";
 
 const FALLBACK_POSTER = "/images/Background-2@2560.webp";
 
@@ -20,8 +20,25 @@ const FALLBACK_POSTER = "/images/Background-2@2560.webp";
  * third-party cookies) loads until the viewer actually presses play.
  */
 export async function MiningVoicesSection() {
-  await getTranslations("home.voices");
-  const { data } = await sanityFetch({ query: INTERVIEWS_QUERY });
+  const t = await getTranslations("home.voices");
+  const locale = await getLocale();
+  const [{ data }, { data: settings }] = await Promise.all([
+    sanityFetch({ query: INTERVIEWS_QUERY }),
+    sanityFetch({ query: SITE_SETTINGS_QUERY }),
+  ]);
+
+  // CMS copy wins where an editor has filled it in; otherwise the translation
+  // files supply the wording, so the section is never blank.
+  const pick = (
+    field: { en?: string | null; fr?: string | null } | null | undefined,
+    fallback: string,
+  ) => (locale === "fr" ? field?.fr : field?.en)?.trim() || fallback;
+
+  const copy = {
+    label: pick(settings?.voices?.label, t("label")),
+    heading: pick(settings?.voices?.heading, t("heading")),
+    text: pick(settings?.voices?.text, t("text")),
+  };
 
   const items: VoicesItem[] = (data ?? []).map((post) => {
     let poster: string | null = null;
@@ -56,6 +73,7 @@ export async function MiningVoicesSection() {
           <MiningVoicesShowcase
             items={items}
             fallbackPoster={FALLBACK_POSTER}
+            copy={copy}
           />
         </Reveal>
       </div>
