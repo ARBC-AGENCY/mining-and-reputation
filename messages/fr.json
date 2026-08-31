@@ -85,7 +85,8 @@
       "privacy": "Politique de confidentialité",
       "notice": "Mentions légales",
       "cookies": "Cookies"
-    }
+    },
+    "poweredBy": "Une initiative de <arbc>ARBC Agency</arbc>"
   },
   "insights": {
     "heading": "Analyses",
@@ -262,5 +263,62 @@
     "next": "Suivant",
     "counter": "{current} sur {total}",
     "dialog": "Visionneuse média"
+  },
+  "about": {
+    "hero": {
+      "heading": "La réputation au cœur de la performance minière.",
+      "p1": "Le secteur minier évolue sous une attention constante. Chaque projet s'inscrit dans un réseau de communautés, d'institutions, d'investisseurs, de collaborateurs, de médias et d'attentes publiques.",
+      "p2": "Mining & Reputation a été créé pour aider les organisations minières à évoluer dans cet environnement avec une communication plus solide, une meilleure compréhension de leurs parties prenantes et une crédibilité renforcée.",
+      "imageAlt": "Site minier vu du ciel"
+    },
+    "mission": {
+      "label": "Notre mission",
+      "heading": "Aider les entreprises minières à gagner et préserver la confiance",
+      "text": "Notre mission est de renforcer la relation entre les organisations minières et les parties prenantes qui influencent leur capacité à opérer, à se développer et à créer de la valeur sur le long terme."
+    },
+    "approach": {
+      "label": "Notre approche",
+      "heading": "Comprendre. Positionner. Engager.",
+      "pillars": {
+        "understand": {
+          "title": "Comprendre",
+          "text": "Analyser les perceptions, les parties prenantes, les risques et l'environnement de communication."
+        },
+        "position": {
+          "title": "Positionner",
+          "text": "Définir des récits crédibles et des positions stratégiques alignées sur les réalités de l'entreprise."
+        },
+        "engage": {
+          "title": "Engager",
+          "text": "Construire le dialogue et déployer la communication sur les canaux et auprès des audiences qui comptent."
+        }
+      }
+    },
+    "difference": {
+      "heading": "Ce qui nous distingue",
+      "items": {
+        "mining": {
+          "title": "Spécialisés dans les mines",
+          "text": "Notre travail est centré sur les enjeux qui façonnent les projets et les entreprises minières."
+        },
+        "reputation": {
+          "title": "La réputation d'abord",
+          "text": "Nous abordons la communication comme une fonction stratégique de l'entreprise, et non comme un simple exercice de visibilité."
+        },
+        "stakeholder": {
+          "title": "Guidés par les parties prenantes",
+          "text": "Les stratégies sont conçues autour des communautés, des institutions, des médias, des investisseurs et des autres audiences critiques."
+        },
+        "content": {
+          "title": "Portés par le contenu",
+          "text": "Nous associons le conseil à l'analyse, au contenu éditorial et aux conversations sectorielles."
+        }
+      }
+    },
+    "arbc": {
+      "label": "ARBC",
+      "heading": "Propulsé par <arbc>ARBC Agency</arbc>",
+      "text": "Mining & Reputation est une initiative développée par <arbc>ARBC Agency</arbc> pour apporter une expertise spécialisée en communication et en réputation au secteur minier."
+    }
   }
 }

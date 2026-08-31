@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import { ArbcLink } from "@/components/ArbcLink";
 import { Link } from "@/i18n/navigation";
 import { SOCIAL_LINKS } from "@/lib/social";
 
@@ -56,6 +57,9 @@ export async function Footer() {
             </Link>
             <p className="text-grey-light/60 mt-6 max-w-xs text-sm leading-relaxed">
               {t("tagline")}
+            </p>
+            <p className="text-grey-light/50 mt-4 text-sm">
+              {t.rich("poweredBy", { arbc: ArbcLink })}
             </p>
           </div>
 

@@ -10,7 +10,7 @@ export async function FinalCtaSection() {
     <section className="bg-dark border-t border-white/5 py-24 md:py-32 lg:py-40">
       <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
         <Reveal>
-          <h2 className="font-display text-[1.75rem] leading-[1.15] text-balance text-white sm:text-3xl md:text-4xl lg:text-5xl">
+          <h2 className="font-display text-2xl leading-[1.15] text-balance text-white sm:text-3xl md:text-4xl ">
             {t("heading")}
           </h2>
           <p className="text-grey-light/70 mx-auto mt-6 max-w-2xl text-base leading-relaxed text-pretty md:text-lg">
