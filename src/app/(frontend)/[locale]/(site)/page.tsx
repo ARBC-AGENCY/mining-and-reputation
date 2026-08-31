@@ -59,6 +59,10 @@ export default async function Home({ params }: Props) {
             eyebrow: String(i + 1).padStart(2, "0"),
             title: tx(`cards.${key}.title`),
             description: tx(`cards.${key}.description`),
+            image: `/images/expertise/${i + 1}@800.webp`,
+            // Decorative: the card already renders its title and description as
+            // real text, so alt text here would only duplicate them.
+            alt: "",
           })),
         }}
       />
