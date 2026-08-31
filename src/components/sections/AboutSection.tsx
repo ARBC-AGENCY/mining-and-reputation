@@ -23,7 +23,10 @@ export async function AboutSection() {
 
         <div className="lg:pt-3 w-full sm:flex sm:flex-col sm:items-center lg:items-start">
           <p className="text-grey-light/70 text-base leading-relaxed text-pretty md:text-lg sm:text-center lg:text-left">
-            {t("description")}
+            {t("description1")}
+          </p>
+          <p className="text-grey-light/70 text-base leading-relaxed text-pretty md:text-lg sm:text-center lg:text-left mt-5">
+            {t("description2")}
           </p>
           <Link
             href="/about"

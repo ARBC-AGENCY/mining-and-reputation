@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { HomeHero } from "@/components/hero/HomeHero";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ExpertiseSection } from "@/components/sections/ExpertiseSection";
+import { SectorsSection } from "@/components/sections/SectorsSection";
 import type { Locale } from "@/i18n/routing";
 import { alternatesFor } from "@/lib/metadata";
 
@@ -69,6 +70,8 @@ export default async function Home({ params }: Props) {
           })),
         }}
       />
+
+      <SectorsSection />
     </>
   );
 }

@@ -98,7 +98,8 @@
     "about": {
       "titleLine1": "L'industrie minière repose sur bien plus que des ressources.",
       "titleLine2": "Elle repose sur la confiance.",
-      "description": "Nous sommes un cabinet de conseil en communication stratégique dédié exclusivement au secteur minier mondial. Nous évoluons à l'intersection complexe des communautés locales, des médias internationaux, des investisseurs et des gouvernements pour sécuriser votre licence sociale d'exploitation.",
+      "description1": "Les entreprises minières évoluent à l'intersection des communautés, des gouvernements, des investisseurs, des médias et de l'opinion publique. Dans ce contexte, la réputation n'est pas une simple question de communication — c'est un actif stratégique.",
+      "description2": "Mining & Reputation accompagne les entreprises minières pour comprendre leurs parties prenantes, construire des récits crédibles, gérer les sujets sensibles et renforcer les relations qui soutiennent leur licence d'exploitation.",
       "cta": "Lire notre manifeste"
     },
     "expertise": {
@@ -130,6 +131,28 @@
         "digital": {
           "title": "Réputation numérique & veille",
           "description": "Comprendre la perception de votre organisation en ligne, détecter les signaux faibles et protéger votre réputation sur les canaux numériques."
+        }
+      }
+    },
+    "sectors": {
+      "heading": "Comprendre le secteur minier, c'est comprendre ses réalités.",
+      "intro": "Chaque matière première, chaque géographie et chaque stade de développement crée des enjeux de communication différents. Notre approche s'adapte aux réalités de chaque projet et de chaque marché.",
+      "cards": {
+        "gold": {
+          "title": "Or & métaux précieux",
+          "description": "Réputation, confiance des investisseurs et engagement des communautés dans des environnements miniers très exposés."
+        },
+        "industrial": {
+          "title": "Fer, bauxite & minéraux industriels",
+          "description": "Communication stratégique pour des opérations à grande échelle et des écosystèmes de parties prenantes complexes."
+        },
+        "critical": {
+          "title": "Lithium & minéraux critiques",
+          "description": "Positionner les projets au cœur de la transition énergétique mondiale tout en répondant à des attentes environnementales et sociales croissantes."
+        },
+        "emerging": {
+          "title": "Entreprises minières émergentes et intermédiaires",
+          "description": "Accompagner les entreprises minières en croissance pour établir leur crédibilité, leur visibilité et des relations plus solides avec leurs parties prenantes."
         }
       }
     }

@@ -98,7 +98,8 @@
     "about": {
       "titleLine1": "Mining is built on more than resources.",
       "titleLine2": "It is built on trust.",
-      "description": "We are a strategic communications consultancy dedicated exclusively to the global mining sector. We navigate the complex intersection of local communities, international media, investors, and governments to secure your social licence to operate.",
+      "description1": "Mining companies operate at the intersection of communities, governments, investors, media and public opinion. In this environment, reputation is not simply a communications issue — it is a strategic asset.",
+      "description2": "Mining & Reputation supports mining companies in understanding their stakeholders, building credible narratives, navigating sensitive issues and strengthening the relationships that sustain their licence to operate.",
       "cta": "Read our manifesto"
     },
     "expertise": {
@@ -130,6 +131,28 @@
         "digital": {
           "title": "Digital Reputation & Monitoring",
           "description": "Understand how your organisation is perceived online, detect emerging issues and protect your reputation across digital channels."
+        }
+      }
+    },
+    "sectors": {
+      "heading": "Understanding mining means understanding its realities.",
+      "intro": "Different commodities, geographies and stages of development create different communication challenges. Our approach is adapted to the realities of each project and market.",
+      "cards": {
+        "gold": {
+          "title": "Gold & Precious Metals",
+          "description": "Reputation, investor confidence and community engagement in highly visible mining environments."
+        },
+        "industrial": {
+          "title": "Iron, Bauxite & Industrial Minerals",
+          "description": "Strategic communications for large-scale operations and complex stakeholder ecosystems."
+        },
+        "critical": {
+          "title": "Lithium & Critical Minerals",
+          "description": "Positioning projects at the centre of the global energy transition while addressing growing environmental and social expectations."
+        },
+        "emerging": {
+          "title": "Emerging & Mid-Sized Mining Companies",
+          "description": "Helping growing mining businesses establish credibility, visibility and stronger stakeholder relationships."
         }
       }
     }
