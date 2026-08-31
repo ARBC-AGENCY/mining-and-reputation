@@ -6,7 +6,7 @@
 import { useRef, useEffect, type CSSProperties, type ReactNode, type MouseEventHandler } from 'react';
 import { Renderer, Program, Mesh, Triangle, Color } from 'ogl';
 
-type ButtonSize = 'sm' | 'md' | 'lg';
+type ButtonSize = 'sm' | 'md' | 'lg' | 'icon';
 
 export interface SpecularButtonProps {
   children?: ReactNode;
@@ -30,6 +30,11 @@ export interface SpecularButtonProps {
   onClick?: MouseEventHandler<HTMLButtonElement>;
   className?: string;
   type?: 'button' | 'submit' | 'reset';
+  /** Local additions: upstream forwards no ARIA, so a toggle could not
+   *  announce its state. */
+  ariaLabel?: string;
+  ariaExpanded?: boolean;
+  ariaControls?: string;
 }
 
 interface ShaderProps {
@@ -51,7 +56,10 @@ const PAD = 20;
 const SIZES: Record<ButtonSize, string> = {
   sm: 'text-[0.85rem] px-[22px] py-[10px]',
   md: 'text-[1rem] px-[30px] py-[14px]',
-  lg: 'text-[1.15rem] px-10 py-[18px]'
+  lg: 'text-[1.15rem] px-10 py-[18px]',
+  // Local addition: square padding for an icon-only button, so the shine
+  // traces a square rather than a wide pill.
+  icon: 'p-3'
 };
 
 const VERT = `#version 300 es
@@ -137,7 +145,10 @@ const SpecularButton = ({
   disabled = false,
   onClick,
   className = '',
-  type = 'button'
+  type = 'button',
+  ariaLabel,
+  ariaExpanded,
+  ariaControls
 }: SpecularButtonProps) => {
   const btnRef = useRef<HTMLButtonElement>(null);
   const fxRef = useRef<HTMLSpanElement>(null);
@@ -236,6 +247,11 @@ const SpecularButton = ({
 
     const update = (now: number) => {
       raf = requestAnimationFrame(update);
+      // Local addition: skip GPU work while the button has no layout box —
+      // e.g. hidden behind a responsive breakpoint. Both header buttons stay
+      // mounted at every width, so without this the invisible one renders
+      // every frame. ResizeObserver resumes it when it becomes visible.
+      if (sizeRef.w < 1 || sizeRef.h < 1) return;
       const dt = Math.min((now - last) / 1000, 0.05);
       last = now;
       const p = propsRef.current;
@@ -281,6 +297,9 @@ const SpecularButton = ({
       type={type}
       disabled={disabled}
       onClick={onClick}
+      aria-label={ariaLabel}
+      aria-expanded={ariaExpanded}
+      aria-controls={ariaControls}
       className={`relative m-0 inline-flex cursor-pointer items-center justify-center border-none font-medium leading-none tracking-[0.01em] outline-none transition-transform duration-150 active:scale-[0.97] disabled:cursor-default disabled:opacity-55 disabled:active:scale-100 [color:var(--sb-text-color)] [border-radius:var(--sb-radius)] [background:color-mix(in_srgb,var(--sb-tint)_calc(var(--sb-tint-opacity)*100%),transparent)] [backdrop-filter:blur(var(--sb-blur))] shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_8px_24px_rgba(0,0,0,0.25)] focus-visible:outline-2 focus-visible:outline-offset-[3px] ${SIZES[size] || SIZES.md}${className ? ` ${className}` : ''}`}
       style={
         {

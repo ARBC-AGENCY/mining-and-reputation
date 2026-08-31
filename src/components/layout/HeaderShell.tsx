@@ -131,7 +131,9 @@ export function HeaderShell({ strings }: { strings: HeaderStrings }) {
       {/* relative z-50 keeps the bar above the open panel (z-40) inside the
           header's stacking context — otherwise the panel covers the X and
           the menu can only be closed with Escape, which phones lack. */}
-      <div className="pointer-events-auto relative z-50 mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-5 md:px-8">
+      {/* Mobile: the bar itself is the glass pill, since there is no nav
+          pill to carry it. Reset at md, where the nav pill takes over. */}
+      <div className="pointer-events-auto relative z-50 mx-4 mt-4 flex items-center justify-between gap-4 rounded-[18px] border border-white/10 bg-white/6 px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.25)] backdrop-blur-xl md:mx-auto md:mt-0 md:max-w-7xl md:rounded-none md:border-0 md:bg-transparent md:px-8 md:py-5 md:shadow-none md:backdrop-blur-none">
         <Link href="/" aria-label={strings.home} className="shrink-0">
           <Image
             src="/images/LOGO-WHITE@600.png"
@@ -183,20 +185,28 @@ export function HeaderShell({ strings }: { strings: HeaderStrings }) {
           </SpecularButton>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? strings.closeMenu : strings.openMenu}
-          className="-mr-2 cursor-pointer p-2 text-white transition-colors hover:text-[#F7C15D] md:hidden"
-        >
-          {open ? (
-            <X className="size-6" aria-hidden="true" />
-          ) : (
-            <Menu className="size-6" aria-hidden="true" />
-          )}
-        </button>
+        <div className="md:hidden">
+          <SpecularButton
+            size="icon"
+            radius={14}
+            textColor="#E6E6E6"
+            lineColor="#F7C15D"
+            baseColor="#353F2C"
+            tint="#E6E6E6"
+            tintOpacity={0.06}
+            blur={8}
+            onClick={() => setOpen((v) => !v)}
+            ariaExpanded={open}
+            ariaControls="mobile-menu"
+            ariaLabel={open ? strings.closeMenu : strings.openMenu}
+          >
+            {open ? (
+              <X className="size-5" aria-hidden="true" />
+            ) : (
+              <Menu className="size-5" aria-hidden="true" />
+            )}
+          </SpecularButton>
+        </div>
       </div>
 
       <div
