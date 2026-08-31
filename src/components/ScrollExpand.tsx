@@ -32,7 +32,9 @@ export interface ScrollExpandProps {
   poster?: string;
   alt?: string;
   title?: string;
-  scrollHint?: string;
+  /** Local change: widened from string to ReactNode so the hint can carry an
+   *  icon. It stays inside the element that fades out on scroll. */
+  scrollHint?: ReactNode;
   startWidth?: number;
   startHeight?: number;
   startRadius?: number;
@@ -46,6 +48,12 @@ export interface ScrollExpandProps {
   enabled?: boolean;
   /** Local addition: fires with eased scroll progress 0..1 on every frame. */
   onProgress?: (progress: number) => void;
+  /**
+   * Local addition: rendered inside the sticky stage, *behind* the clipped
+   * frame. Lives here rather than in the parent section so it stays pinned to
+   * the viewport with the stage instead of scrolling away.
+   */
+  backdrop?: ReactNode;
   children?: ReactNode;
   className?: string;
   style?: CSSProperties;
@@ -71,6 +79,7 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
   useWindowScroll = false,
   enabled = true,
   onProgress,
+  backdrop,
   children,
   className = '',
   style,
@@ -271,6 +280,13 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
     >
       <div ref={trackRef} className="relative w-full">
         <div ref={stageRef} className="sticky top-0 w-full overflow-hidden [--se-title-size:4rem]">
+          {/* Behind the frame: visible around the resting card, then covered
+              as the frame opens to full bleed. Pointer events are left alone so
+              a backdrop can respond to the cursor; the frame sits later in the
+              DOM, so anything interactive inside it still wins. */}
+          {backdrop ? (
+            <div className="absolute inset-0">{backdrop}</div>
+          ) : null}
           <div
             ref={frameRef}
             className="absolute inset-0 [clip-path:inset(21%_29%_21%_29%_round_24px)] [will-change:clip-path]"
@@ -300,7 +316,7 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
           {scrollHint ? (
             <div
               ref={hintRef}
-              className="absolute inset-x-0 bottom-5 text-center text-[0.8125rem] tracking-[0.02em] text-white/55 pointer-events-none [will-change:opacity,transform]"
+              className="pointer-events-none absolute inset-x-0 bottom-5 flex items-center justify-center gap-2 text-[0.8125rem] tracking-[0.02em] text-white/55 [will-change:opacity,transform]"
             >
               {scrollHint}
             </div>

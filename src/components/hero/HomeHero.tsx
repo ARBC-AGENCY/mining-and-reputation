@@ -1,7 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { ChevronDown } from "lucide-react";
 import ScrollExpand from "@/components/ScrollExpand";
+import { HeroThreads } from "@/components/hero/HeroThreads";
 import SpecularButton from "@/components/SpecularButton";
 import { useHeaderReveal } from "@/components/providers/HeaderRevealProvider";
 import { useRouter } from "@/i18n/navigation";
@@ -58,8 +60,18 @@ export function HomeHero({ strings }: { strings: HeroStrings }) {
         src="/images/Background-1@2560.webp"
         alt={strings.imageAlt}
         title={strings.brand}
-        scrollHint={strings.scrollHint}
+        scrollHint={
+          <>
+            {strings.scrollHint}
+            {/* motion-reduce turns the loop off without hiding the arrow. */}
+            <ChevronDown
+              className="size-4 animate-scroll-hint motion-reduce:animate-none"
+              aria-hidden="true"
+            />
+          </>
+        }
         onProgress={handleProgress}
+        backdrop={<HeroThreads />}
         startWidth={42}
         startHeight={58}
         startRadius={24}

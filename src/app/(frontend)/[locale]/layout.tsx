@@ -54,20 +54,19 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html
       lang={locale}
       className="h-full antialiased"
-      // The inline script below stamps data-preloading / data-preloaded on
+      // The inline script below stamps data-preloading on
       // <html> before hydration, so the client attributes intentionally differ
       // from the server's. Scoped to this element only — children are still
       // hydration-checked as normal.
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        {/* Runs before first paint so repeat visits never flash the preloader. */}
+        {/* Locks scrolling before first paint, so the page behind the
+            preloader cannot be scrolled while it is up. */}
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "try{var d=document.documentElement;" +
-              "if(sessionStorage.getItem('mr:preloaded')==='1'){d.setAttribute('data-preloaded','')}" +
-              "else{d.setAttribute('data-preloading','')}}catch(e){}",
+              "try{document.documentElement.setAttribute('data-preloading','')}catch(e){}",
           }}
         />
         <NextIntlClientProvider>

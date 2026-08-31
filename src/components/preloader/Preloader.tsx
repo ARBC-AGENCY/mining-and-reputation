@@ -5,16 +5,38 @@ import Image from "next/image";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const LOTTIE_SRC = "/animations/preloader.json";
-const SESSION_KEY = "mr:preloaded";
-/** Floor stops a sub-300ms flash on fast connections reading as a glitch. */
-const MIN_VISIBLE_MS = 1200;
+/**
+ * Minimum time the preloader stays up, even if the page is ready sooner.
+ * Also prevents a sub-300ms flash on fast connections reading as a glitch.
+ * Total time on screen is this plus FADE_MS.
+ */
+const MIN_VISIBLE_MS = 3000;
+
+/**
+ * True once the preloader has run for this page load.
+ *
+ * Module scope is deliberate: it resets on a real page load (refresh, direct
+ * entry, hard navigation) but survives client-side navigation, which is
+ * exactly the rule wanted here. Switching locale remounts this component
+ * because the [locale] segment changes — without this flag, changing language
+ * would replay the preloader as though the page had reloaded.
+ *
+ * Only ever written inside an effect, so server rendering never touches it
+ * (module scope is shared across requests on the server).
+ */
+let shownThisPageLoad = false;
 const FADE_MS = 600;
 
 export function Preloader({ label }: { label: string }) {
-  // Starts true to match the server render. The inline script in the layout
-  // has already hidden this via [data-preloaded] for repeat visits, so there
-  // is no flash before this mounts.
-  const [mounted, setMounted] = useState(true);
+  // Server always renders it, so the SSR markup matches on first load. On a
+  // client remount (locale switch) the flag is already set, so it starts
+  // closed and never flashes.
+  const [mounted, setMounted] = useState(() =>
+    typeof window === "undefined" ? true : !shownThisPageLoad,
+  );
+  // Tracks whether *this* instance claimed the flag, so React's dev-mode
+  // double effect invocation doesn't hide the preloader on a genuine load.
+  const claimed = useRef(false);
   const [leaving, setLeaving] = useState(false);
   const [hasLottie, setHasLottie] = useState<boolean | null>(null);
   const startedAt = useRef(Date.now());
@@ -25,32 +47,23 @@ export function Preloader({ label }: { label: string }) {
 
     window.setTimeout(() => {
       setLeaving(true);
-      try {
-        sessionStorage.setItem(SESSION_KEY, "1");
-      } catch {
-        // Private mode / blocked storage: the preloader simply shows again.
-      }
       window.setTimeout(() => setMounted(false), FADE_MS);
     }, wait);
   }, []);
 
   useEffect(() => {
-    // Already seen this session — CSS has it hidden; drop it immediately.
-    let seen = false;
-    try {
-      seen = sessionStorage.getItem(SESSION_KEY) === "1";
-    } catch {
-      seen = false;
-    }
-    if (seen) {
+    // A remount from client-side navigation, not a fresh page load.
+    if (shownThisPageLoad && !claimed.current) {
       setMounted(false);
       return;
     }
+    claimed.current = true;
+    shownThisPageLoad = true;
 
     document.documentElement.setAttribute("data-preloading", "");
 
-    // Probe for the Lottie only when we are actually going to show it, so a
-    // missing file doesn't 404 on every subsequent navigation.
+    // Probe for the Lottie so a missing file falls back to the logo mark
+    // rather than rendering an empty box.
     const controller = new AbortController();
     fetch(LOTTIE_SRC, { method: "HEAD", signal: controller.signal })
       .then((r) => setHasLottie(r.ok))

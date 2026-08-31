@@ -215,12 +215,6 @@
    Preloader
    ============================================================ */
 
-/* Set pre-paint by the inline script in the locale layout, so a repeat
-   visitor in the same session never sees a frame of the preloader. */
-html[data-preloaded] [data-preloader] {
-  display: none;
-}
-
 /* Hold the page still underneath while the preloader is up. */
 html[data-preloading] body {
   overflow: hidden;
@@ -240,4 +234,25 @@ body:has([data-scroll-hero]:not([data-hero-revealed])) [data-site-header] {
 
 body:has([data-scroll-hero]:not([data-hero-revealed])) [data-site-header] * {
   pointer-events: none;
+}
+
+/* ============================================================
+   Scroll hint
+   ============================================================ */
+
+/* Registered in @theme so Tailwind generates `animate-scroll-hint`. */
+@theme {
+  --animate-scroll-hint: scroll-hint 1.8s ease-in-out infinite;
+}
+
+@keyframes scroll-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(4px);
+    opacity: 1;
+  }
 }
