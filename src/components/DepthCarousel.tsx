@@ -63,6 +63,13 @@ export interface DepthCarouselProps {
   showIndicators?: boolean;
   /** Local addition: localisable accessible name for the carousel. */
   ariaLabel?: string;
+  /**
+   * Local addition: when false, the mouse wheel / trackpad is ignored entirely
+   * so the page scrolls normally over the carousel. Dragging, the arrows and
+   * the indicators still work, and touch is unaffected either way — finger
+   * drags are pointer events, not wheel events.
+   */
+  enableWheel?: boolean;
   onChange?: (index: number, item: DepthCarouselResolvedItem) => void;
   className?: string;
 }
@@ -129,6 +136,7 @@ const DepthCarousel = ({
   showControls = true,
   showIndicators = true,
   ariaLabel = "Depth carousel",
+  enableWheel = true,
   onChange,
   className = "",
 }: DepthCarouselProps) => {
@@ -299,7 +307,7 @@ const DepthCarousel = ({
 
   useEffect(() => {
     const el = rootRef.current;
-    if (!el) return;
+    if (!el || !enableWheel) return;
     const onWheel = (e: WheelEvent) => {
       const cfg = cfgRef.current;
       if (cfg.count < 2) return;
@@ -321,7 +329,7 @@ const DepthCarousel = ({
       el.removeEventListener("wheel", onWheel);
       if (wheelTimerRef.current) clearTimeout(wheelTimerRef.current);
     };
-  }, [layout, setFocus]);
+  }, [layout, setFocus, enableWheel]);
 
   const onPointerDown = useCallback((e: ReactPointerEvent<HTMLDivElement>) => {
     const cfg = cfgRef.current;

@@ -79,6 +79,10 @@ export function ExpertiseSection({ strings }: { strings: ExpertiseStrings }) {
             duration={700}
             ease="power3.out"
             loop
+            // Wheel off: it called preventDefault() and swallowed page scroll
+            // whenever the cursor was over the carousel. Drag, arrows and
+            // indicators remain; touch is unaffected.
+            enableWheel={false}
             showControls
             showIndicators
             ariaLabel={strings.carouselLabel}
