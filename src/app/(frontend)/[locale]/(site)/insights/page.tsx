@@ -4,10 +4,13 @@ import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { alternatesFor } from "@/lib/metadata";
 import { sanityFetch } from "@/sanity/lib/live";
-import { ARTICLES_QUERY } from "@/sanity/lib/queries";
+import { POSTS_QUERY } from "@/sanity/lib/queries";
+
+const FORMATS = ["article", "interview", "news", "resource"] as const;
 
 type Props = {
   params: Promise<{ locale: Locale }>;
+  searchParams: Promise<{ type?: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -21,12 +24,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function InsightsPage({ params }: Props) {
+export default async function InsightsPage({ params, searchParams }: Props) {
   const { locale } = await params;
+  const { type } = await searchParams;
+  // Tabs are addressed by query param; anything unrecognised falls back to All.
+  const format = FORMATS.includes(type as (typeof FORMATS)[number])
+    ? (type as string)
+    : null;
   setRequestLocale(locale);
 
   const t = await getTranslations("insights");
-  const { data: articles } = await sanityFetch({ query: ARTICLES_QUERY });
+  const { data: articles } = await sanityFetch({
+    query: POSTS_QUERY,
+    params: { format, from: 0, to: 12 },
+  });
 
   return (
     <div className="mx-auto max-w-6xl px-6 pb-20 pt-36">

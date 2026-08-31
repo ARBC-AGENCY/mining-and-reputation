@@ -35,7 +35,7 @@
     "language": "Langue",
     "contact": "Contact",
     "expertise": "Expertise",
-    "blog": "Blog",
+    "blog": "Blog & Médias",
     "talkToUs": "Parlons-en"
   },
   "footer": {
@@ -155,6 +155,37 @@
           "description": "Accompagner les entreprises minières en croissance pour établir leur crédibilité, leur visibilité et des relations plus solides avec leurs parties prenantes."
         }
       }
+    },
+    "insights": {
+      "heading": "Des analyses qui façonnent la conversation minière",
+      "intro": "Analyses, points de vue et conversations sur les enjeux qui façonnent le secteur minier, la réputation et l'engagement des parties prenantes.",
+      "featured": "À la une",
+      "latest": "Dernier",
+      "readArticle": "Lire l'article",
+      "cta": "Découvrir tous les articles",
+      "empty": "Les premières analyses arrivent bientôt."
+    },
+    "voices": {
+      "series": "Mining Voices",
+      "label": "Voix de l'industrie minière",
+      "heading": "Des conversations avec celles et ceux qui façonnent l'avenir du secteur minier.",
+      "text": "Dirigeants, experts et leaders du secteur partagent leur regard sur les mines, la réputation, la durabilité et les défis qui transforment la filière.",
+      "cta": "Voir la dernière interview",
+      "ctaFallback": "Voir d'autres interviews"
     }
+  },
+  "formats": {
+    "all": "Tout",
+    "article": "Article",
+    "interview": "Interview",
+    "news": "Actualités",
+    "resource": "Rapport"
+  },
+  "lightbox": {
+    "close": "Fermer",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "counter": "{current} sur {total}",
+    "dialog": "Visionneuse média"
   }
 }

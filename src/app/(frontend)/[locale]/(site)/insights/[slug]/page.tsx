@@ -7,7 +7,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { alternatesFor } from "@/lib/metadata";
 import { client } from "@/sanity/lib/client";
 import { sanityFetch } from "@/sanity/lib/live";
-import { ARTICLE_QUERY, ARTICLE_SLUGS_QUERY } from "@/sanity/lib/queries";
+import { POST_QUERY, POST_SLUGS_QUERY } from "@/sanity/lib/queries";
 
 type Props = {
   params: Promise<{ locale: Locale; slug: string }>;
@@ -16,7 +16,7 @@ type Props = {
 // Articles are single-language: the same document is served under every
 // locale, with only the surrounding chrome translated.
 export async function generateStaticParams() {
-  const slugs = await client.fetch(ARTICLE_SLUGS_QUERY);
+  const slugs = await client.fetch(POST_SLUGS_QUERY);
 
   return routing.locales.flatMap((locale) =>
     slugs.map((slug) => ({ locale, slug })),
@@ -26,7 +26,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const { data: article } = await sanityFetch({
-    query: ARTICLE_QUERY,
+    query: POST_QUERY,
     params: { slug },
     stega: false,
   });
@@ -53,7 +53,7 @@ export default async function ArticlePage({ params }: Props) {
   const t = await getTranslations("article");
   const tInsights = await getTranslations("insights");
   const { data: article } = await sanityFetch({
-    query: ARTICLE_QUERY,
+    query: POST_QUERY,
     params: { slug },
   });
 

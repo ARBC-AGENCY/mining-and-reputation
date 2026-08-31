@@ -6,6 +6,7 @@ import DepthCarousel, {
   type DepthCarouselItem,
 } from "@/components/DepthCarousel";
 import { Link } from "@/i18n/navigation";
+import { Reveal } from "@/components/motion/Reveal";
 
 export type ExpertiseCard = {
   eyebrow: string;
@@ -41,6 +42,7 @@ export function ExpertiseSection({ strings }: { strings: ExpertiseStrings }) {
     <section className="bg-dark py-20 md:py-28 lg:py-32">
       <div className="mx-auto max-xl:flex max-lg:flex-col max-xl:items-start grid max-w-7xl items-center gap-12 px-6 xl:grid-cols-2 xl:gap-16 xl:px-8">
         {/* Text first in the DOM, so it also comes first when stacked. */}
+        <Reveal>
         <div className="lg:max-w-sm xl:max-w-lg lg:self-center sm:max-w-none sm:items-center lg:items-start  max-xl:flex max-xl:flex-col ">
           <h2 className="font-display text-[1.75rem] text-balance  leading-[1.1] text-white sm:text-2xl sm:text-center lg:text-left md:text-3xl lg:text-4xl lg:leading-[1.05]">
             {strings.heading}
@@ -56,11 +58,13 @@ export function ExpertiseSection({ strings }: { strings: ExpertiseStrings }) {
             <ArrowRight className="size-4" aria-hidden="true" />
           </Link>
         </div>
+        </Reveal>
 
         {/* Fixed height: DepthCarousel is absolutely positioned inside and
             would otherwise collapse to zero. overflow-hidden clips the fanned
             receding cards, which otherwise push ~38px past a phone viewport and
             give the whole page a horizontal scrollbar. */}
+        <Reveal delay={0.12}>
         <div className="relative max-[425px]:h-fit h-113 sm:h-139 w-full overflow-hidden md:h-150">
           <DepthCarousel
             items={items}
@@ -88,6 +92,7 @@ export function ExpertiseSection({ strings }: { strings: ExpertiseStrings }) {
             ariaLabel={strings.carouselLabel}
           />
         </div>
+        </Reveal>
       </div>
     </section>
   );

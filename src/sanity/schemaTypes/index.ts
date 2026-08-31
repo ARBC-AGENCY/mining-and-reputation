@@ -1,5 +1,5 @@
 import { type SchemaTypeDefinition } from "sanity";
-import { articleType } from "../documents/article";
+import { postType } from "../documents/post";
 import { authorType } from "../documents/author";
 import { categoryType } from "../documents/category";
 import { expertiseType } from "../documents/expertise";
@@ -13,6 +13,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     authorType,
     expertiseType,
     // sectorType,
-    articleType,
+    postType,
   ],
 };
