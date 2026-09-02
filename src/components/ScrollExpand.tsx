@@ -31,7 +31,9 @@ export interface ScrollExpandProps {
   mediaType?: 'image' | 'video';
   poster?: string;
   alt?: string;
-  title?: string;
+  /** Local change: widened from string to ReactNode so the resting title can
+   *  be a logo. It stays inside the element that fades and scales on scroll. */
+  title?: ReactNode;
   /** Local change: widened from string to ReactNode so the hint can carry an
    *  icon. It stays inside the element that fades out on scroll. */
   scrollHint?: ReactNode;

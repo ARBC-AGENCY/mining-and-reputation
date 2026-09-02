@@ -28,9 +28,9 @@ export function HeroThreads() {
   return (
     <WebThreads
       // Brand gold, warming toward a pale core at the brightest points.
-      color1="#8EB467"
-      color2="#8EB467"
-      color3="#8EB467"
+      color1="#f7c15d"
+      color2="#f7c15d"
+      color3="#f7c15d"
       speed={reduced ? 0 : 0.16}
       threadCount={7}
       frequency={4.2}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import ScrollExpand from "@/components/ScrollExpand";
 import { HeroThreads } from "@/components/hero/HeroThreads";
@@ -59,7 +60,19 @@ export function HomeHero({ strings }: { strings: HeroStrings }) {
         useWindowScroll
         src="/images/Background-1@2560.webp"
         alt={strings.imageAlt}
-        title={strings.brand}
+        title={
+          // The logo replaces the wordmark at rest. drop-shadow rather than the
+          // parent's text-shadow, which does not apply to an image.
+          <Image
+            src="/images/LOGO-WHITE@600.png"
+            alt={strings.brand}
+            width={600}
+            height={167}
+            priority
+            sizes="(min-width: 768px) 520px, 62vw"
+            className="h-auto w-[62%] max-w-[520px] drop-shadow-[0_2px_24px_rgba(0,0,0,0.45)]"
+          />
+        }
         scrollHint={
           <>
             {strings.scrollHint}
