@@ -20,7 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "metadata" });
 
   return {
-    title: t("home.title"),
+    // Absolute: the home title already leads with the brand, so the
+    // layout's "%s | Mining & Reputation" template would repeat it.
+    title: { absolute: t("home.title") },
     description: t("home.description"),
     alternates: alternatesFor(locale, ""),
   };

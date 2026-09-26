@@ -7,7 +7,9 @@ import { Reveal } from "@/components/motion/Reveal";
 import { Link } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { EXPERTISE_AREAS, areaBySlug } from "@/lib/expertise";
-import { alternatesFor } from "@/lib/metadata";
+import { alternatesFor, localeUrl } from "@/lib/metadata";
+import { breadcrumbs, service } from "@/lib/structured-data";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { sanityFetch } from "@/sanity/lib/live";
 import { RELATED_POSTS_QUERY } from "@/sanity/lib/queries";
 
@@ -29,8 +31,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "expertise" });
 
   return {
-    title: t(`areas.${area.key}.title` as "areas.crisis.title"),
-    description: t(`areas.${area.key}.tagline` as "areas.crisis.tagline"),
+    // Search-facing wording (keyword-led, ~150 characters); the page keeps
+    // its shorter on-page title and tagline. Share image:
+    // opengraph-image.tsx beside this page.
+    title: t(`areas.${area.key}.metaTitle` as "areas.crisis.metaTitle"),
+    description: t(
+      `areas.${area.key}.metaDescription` as "areas.crisis.metaDescription",
+    ),
     alternates: alternatesFor(locale, `/expertise/${slug}`),
   };
 }
@@ -61,8 +68,28 @@ export default async function ExpertiseDetailPage({ params }: Props) {
   });
   const related = (data ?? []) as PostCardData[];
 
+  const url = localeUrl(locale, `/expertise/${slug}`);
+  const tNav = await getTranslations("nav");
+
   return (
     <>
+      <JsonLd
+        data={service({
+          name: t(`areas.${key}.title` as "areas.crisis.title"),
+          description: t(
+            `areas.${key}.metaDescription` as "areas.crisis.metaDescription",
+          ),
+          url,
+          locale,
+        })}
+      />
+      <JsonLd
+        data={breadcrumbs([
+          [tNav("home"), localeUrl(locale)],
+          [tNav("expertise"), localeUrl(locale, "/expertise")],
+          [t(`areas.${key}.title` as "areas.crisis.title"), url],
+        ])}
+      />
       {/* Hero */}
       <section className="bg-dark pt-36 pb-16 md:pt-44 md:pb-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

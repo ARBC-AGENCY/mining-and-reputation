@@ -75,6 +75,9 @@ export const LATEST_INTERVIEW_QUERY = defineQuery(`
 export const POST_QUERY = defineQuery(`
   *[_type == "post" && slug.current == $slug][0] {
     ${CARD_FIELDS},
+    _updatedAt,
+    language,
+    seo,
     body,
     file{ asset->{ url, originalFilename, size } },
     relatedExpertise[]->{ title, "slug": slug.current }
@@ -95,5 +98,25 @@ export const RELATED_POSTS_QUERY = defineQuery(`
   ]
   | order(publishedAt desc)[0...3] {
     ${CARD_FIELDS}
+  }
+`);
+
+/** Everything the sitemap needs; posts marked noIndex are left out. */
+export const SITEMAP_POSTS_QUERY = defineQuery(`
+  *[_type == "post" && defined(slug.current) && seo.noIndex != true] {
+    "slug": slug.current,
+    language,
+    publishedAt,
+    _updatedAt
+  }
+`);
+
+/** Share-image inputs for one post. */
+export const POST_OG_QUERY = defineQuery(`
+  *[_type == "post" && slug.current == $slug][0] {
+    title,
+    format,
+    coverImage,
+    "socialImage": seo.socialImage
   }
 `);

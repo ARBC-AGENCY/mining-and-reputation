@@ -59,6 +59,7 @@ export type Post = {
   format?: "article" | "interview" | "news" | "resource";
   title?: string;
   slug?: Slug;
+  language?: "en" | "fr";
   excerpt?: string;
   coverImage?: {
     asset?: SanityImageAssetReference;
@@ -115,6 +116,21 @@ export type Post = {
       _key: string;
     } & ExpertiseReference
   >;
+  seo?: Seo;
+};
+
+export type Seo = {
+  _type: "seo";
+  metaTitle?: string;
+  metaDescription?: string;
+  socialImage?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  noIndex?: boolean;
 };
 
 export type SanityImageCrop = {
@@ -177,20 +193,6 @@ export type Category = {
   title?: string;
   slug?: Slug;
   description?: string;
-};
-
-export type Seo = {
-  _type: "seo";
-  metaTitle?: string;
-  metaDescription?: string;
-  socialImage?: {
-    asset?: SanityImageAssetReference;
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-  };
-  noIndex?: boolean;
 };
 
 export type SanityImagePaletteSwatch = {
@@ -297,13 +299,13 @@ export type AllSanitySchemaTypes =
   | SanityFileAssetReference
   | ExpertiseReference
   | Post
+  | Seo
   | SanityImageCrop
   | SanityImageHotspot
   | Slug
   | Expertise
   | Author
   | Category
-  | Seo
   | SanityImagePaletteSwatch
   | SanityImagePalette
   | SanityImageDimensions
@@ -455,7 +457,7 @@ export type LATEST_INTERVIEW_QUERY_RESULT = {
 
 // Source: src/sanity/lib/queries.ts
 // Variable: POST_QUERY
-// Query: *[_type == "post" && slug.current == $slug][0] {      _id,  format,  title,  "slug": slug.current,  excerpt,  publishedAt,  coverImage,  videoUrl,  author->{ name },  categories[]->{ title, "slug": slug.current },    body,    file{ asset->{ url, originalFilename, size } },    relatedExpertise[]->{ title, "slug": slug.current }  }
+// Query: *[_type == "post" && slug.current == $slug][0] {      _id,  format,  title,  "slug": slug.current,  excerpt,  publishedAt,  coverImage,  videoUrl,  author->{ name },  categories[]->{ title, "slug": slug.current },    _updatedAt,    language,    seo,    body,    file{ asset->{ url, originalFilename, size } },    relatedExpertise[]->{ title, "slug": slug.current }  }
 export type POST_QUERY_RESULT = {
   _id: string;
   format: "article" | "interview" | "news" | "resource" | null;
@@ -478,6 +480,9 @@ export type POST_QUERY_RESULT = {
     title: string | null;
     slug: string | null;
   }> | null;
+  _updatedAt: string;
+  language: "en" | "fr" | null;
+  seo: Seo | null;
   body: Array<
     | {
         children?: Array<{
@@ -552,6 +557,38 @@ export type RELATED_POSTS_QUERY_RESULT = Array<{
   }> | null;
 }>;
 
+// Source: src/sanity/lib/queries.ts
+// Variable: SITEMAP_POSTS_QUERY
+// Query: *[_type == "post" && defined(slug.current) && seo.noIndex != true] {    "slug": slug.current,    language,    publishedAt,    _updatedAt  }
+export type SITEMAP_POSTS_QUERY_RESULT = Array<{
+  slug: string | null;
+  language: "en" | "fr" | null;
+  publishedAt: string | null;
+  _updatedAt: string;
+}>;
+
+// Source: src/sanity/lib/queries.ts
+// Variable: POST_OG_QUERY
+// Query: *[_type == "post" && slug.current == $slug][0] {    title,    format,    coverImage,    "socialImage": seo.socialImage  }
+export type POST_OG_QUERY_RESULT = {
+  title: string | null;
+  format: "article" | "interview" | "news" | "resource" | null;
+  coverImage: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  } | null;
+  socialImage: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  } | null;
+} | null;
+
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
@@ -562,8 +599,10 @@ declare module "@sanity/client" {
     '\n  *[\n    _type == "post" &&\n    defined(slug.current) &&\n    _id != $excludeId\n  ]\n  | order(publishedAt desc)[0...4] {\n    \n  _id,\n  format,\n  title,\n  "slug": slug.current,\n  excerpt,\n  publishedAt,\n  coverImage,\n  videoUrl,\n  author->{ name },\n  categories[]->{ title, "slug": slug.current }\n\n  }\n': RECENT_POSTS_QUERY_RESULT;
     '\n  *[_type == "post" && format == "interview" && defined(slug.current)]\n    | order(publishedAt desc)[0...8] {\n    \n  _id,\n  format,\n  title,\n  "slug": slug.current,\n  excerpt,\n  publishedAt,\n  coverImage,\n  videoUrl,\n  author->{ name },\n  categories[]->{ title, "slug": slug.current }\n\n  }\n': INTERVIEWS_QUERY_RESULT;
     '\n  *[_type == "post" && format == "interview" && defined(slug.current)]\n    | order(publishedAt desc)[0] {\n    \n  _id,\n  format,\n  title,\n  "slug": slug.current,\n  excerpt,\n  publishedAt,\n  coverImage,\n  videoUrl,\n  author->{ name },\n  categories[]->{ title, "slug": slug.current }\n\n  }\n': LATEST_INTERVIEW_QUERY_RESULT;
-    '\n  *[_type == "post" && slug.current == $slug][0] {\n    \n  _id,\n  format,\n  title,\n  "slug": slug.current,\n  excerpt,\n  publishedAt,\n  coverImage,\n  videoUrl,\n  author->{ name },\n  categories[]->{ title, "slug": slug.current }\n,\n    body,\n    file{ asset->{ url, originalFilename, size } },\n    relatedExpertise[]->{ title, "slug": slug.current }\n  }\n': POST_QUERY_RESULT;
+    '\n  *[_type == "post" && slug.current == $slug][0] {\n    \n  _id,\n  format,\n  title,\n  "slug": slug.current,\n  excerpt,\n  publishedAt,\n  coverImage,\n  videoUrl,\n  author->{ name },\n  categories[]->{ title, "slug": slug.current }\n,\n    _updatedAt,\n    language,\n    seo,\n    body,\n    file{ asset->{ url, originalFilename, size } },\n    relatedExpertise[]->{ title, "slug": slug.current }\n  }\n': POST_QUERY_RESULT;
     '\n  *[_type == "post" && defined(slug.current)].slug.current\n': POST_SLUGS_QUERY_RESULT;
     '\n  *[\n    _type == "post" &&\n    defined(slug.current) &&\n    count(relatedExpertise[@->slug.current == $expertise]) > 0\n  ]\n  | order(publishedAt desc)[0...3] {\n    \n  _id,\n  format,\n  title,\n  "slug": slug.current,\n  excerpt,\n  publishedAt,\n  coverImage,\n  videoUrl,\n  author->{ name },\n  categories[]->{ title, "slug": slug.current }\n\n  }\n': RELATED_POSTS_QUERY_RESULT;
+    '\n  *[_type == "post" && defined(slug.current) && seo.noIndex != true] {\n    "slug": slug.current,\n    language,\n    publishedAt,\n    _updatedAt\n  }\n': SITEMAP_POSTS_QUERY_RESULT;
+    '\n  *[_type == "post" && slug.current == $slug][0] {\n    title,\n    format,\n    coverImage,\n    "socialImage": seo.socialImage\n  }\n': POST_OG_QUERY_RESULT;
   }
 }

@@ -12,10 +12,14 @@
    Fonts
    ============================================================ */
 
+/* WOFF2 first (about half the bytes); the original TTF/OTF stay as a
+   fallback and are what the generated share images read. */
+
 /* Toxigenesis — display / headings (bold cut only) */
 @font-face {
   font-family: "Toxigenesis";
-  src: url("/fonts/toxigenesis/typodermic-toxigenesisrg-bold.ttf") format("truetype");
+  src: url("/fonts/toxigenesis/typodermic-toxigenesisrg-bold.woff2") format("woff2"),
+    url("/fonts/toxigenesis/typodermic-toxigenesisrg-bold.ttf") format("truetype");
   font-weight: 400 700;
   font-style: normal;
   font-display: swap;
@@ -24,70 +28,80 @@
 /* Fivo Sans Modern — body / UI */
 @font-face {
   font-family: "Fivo Sans Modern";
-  src: url("/fonts/FivoSansModern/FivoSansModern-Regular.otf") format("opentype");
+  src: url("/fonts/FivoSansModern/FivoSansModern-Regular.woff2") format("woff2"),
+    url("/fonts/FivoSansModern/FivoSansModern-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Fivo Sans Modern";
-  src: url("/fonts/FivoSansModern/FivoSansModern-Regular-Oblique.otf") format("opentype");
+  src: url("/fonts/FivoSansModern/FivoSansModern-Regular-Oblique.woff2") format("woff2"),
+    url("/fonts/FivoSansModern/FivoSansModern-Regular-Oblique.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Fivo Sans Modern";
-  src: url("/fonts/FivoSansModern/FivoSansModern-Medium.otf") format("opentype");
+  src: url("/fonts/FivoSansModern/FivoSansModern-Medium.woff2") format("woff2"),
+    url("/fonts/FivoSansModern/FivoSansModern-Medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Fivo Sans Modern";
-  src: url("/fonts/FivoSansModern/FivoSansModern-Medium-Oblique.otf") format("opentype");
+  src: url("/fonts/FivoSansModern/FivoSansModern-Medium-Oblique.woff2") format("woff2"),
+    url("/fonts/FivoSansModern/FivoSansModern-Medium-Oblique.otf") format("opentype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Fivo Sans Modern";
-  src: url("/fonts/FivoSansModern/FivoSansModern-Bold.otf") format("opentype");
+  src: url("/fonts/FivoSansModern/FivoSansModern-Bold.woff2") format("woff2"),
+    url("/fonts/FivoSansModern/FivoSansModern-Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Fivo Sans Modern";
-  src: url("/fonts/FivoSansModern/FivoSansModern-Bold-Oblique.otf") format("opentype");
+  src: url("/fonts/FivoSansModern/FivoSansModern-Bold-Oblique.woff2") format("woff2"),
+    url("/fonts/FivoSansModern/FivoSansModern-Bold-Oblique.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Fivo Sans Modern";
-  src: url("/fonts/FivoSansModern/FivoSansModern-Heavy.otf") format("opentype");
+  src: url("/fonts/FivoSansModern/FivoSansModern-Heavy.woff2") format("woff2"),
+    url("/fonts/FivoSansModern/FivoSansModern-Heavy.otf") format("opentype");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Fivo Sans Modern";
-  src: url("/fonts/FivoSansModern/FivoSansModern-Heavy-Oblique.otf") format("opentype");
+  src: url("/fonts/FivoSansModern/FivoSansModern-Heavy-Oblique.woff2") format("woff2"),
+    url("/fonts/FivoSansModern/FivoSansModern-Heavy-Oblique.otf") format("opentype");
   font-weight: 800;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Fivo Sans Modern";
-  src: url("/fonts/FivoSansModern/FivoSansModern-ExtBlack.otf") format("opentype");
+  src: url("/fonts/FivoSansModern/FivoSansModern-ExtBlack.woff2") format("woff2"),
+    url("/fonts/FivoSansModern/FivoSansModern-ExtBlack.otf") format("opentype");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Fivo Sans Modern";
-  src: url("/fonts/FivoSansModern/FivoSansModern-ExtBlack-Oblique.otf") format("opentype");
+  src: url("/fonts/FivoSansModern/FivoSansModern-ExtBlack-Oblique.woff2") format("woff2"),
+    url("/fonts/FivoSansModern/FivoSansModern-ExtBlack-Oblique.otf") format("opentype");
   font-weight: 900;
   font-style: italic;
   font-display: swap;

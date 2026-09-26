@@ -1,44 +1,47 @@
 {
   "metadata": {
-    "siteName": "Mining Reputation",
+    "siteName": "Mining & Reputation",
     "home": {
-      "title": "Mining Reputation",
-      "description": "Reputation strategy and communications counsel for the mining and critical minerals sector."
+      "title": "Mining & Reputation | Communication & Reputation for Mining",
+      "description": "Strategic communication and reputation management for mining companies: crisis communication, media relations, ESG, community and investor relations."
     },
     "about": {
-      "title": "About",
-      "description": "Who we are and how we work with operators, investors and regulators across the mining sector."
+      "title": "About Our Mining Communications Firm",
+      "description": "Mining & Reputation helps mining companies build trust with communities, governments, investors and the media, and protect their licence to operate."
     },
     "blog": {
-      "title": "Blog & Media",
-      "description": "Analysis and commentary on reputation, licence to operate, and stakeholder trust in mining."
+      "title": "Mining Insights, Interviews & News",
+      "description": "Analysis, interviews, industry news and reports on reputation, stakeholder engagement, ESG and communication in the mining sector."
     },
     "preloader": {
       "label": "Loading"
     },
     "expertise": {
-      "title": "Expertise",
-      "description": "Reputation strategy, stakeholder engagement and communications counsel for the mining sector."
+      "title": "Communication Expertise for Mining",
+      "description": "Crisis communication, media relations, ESG and social licence, community relations, investor communication and digital reputation for mining companies."
     },
     "contact": {
-      "title": "Contact",
-      "description": "Talk to us about reputation, trust and stakeholder communication in mining."
+      "title": "Contact Our Mining Communications Team",
+      "description": "Talk to Mining & Reputation about crisis preparedness, media relations, ESG communication or stakeholder engagement for your mining company or project."
     },
     "caseStudies": {
-      "title": "Case studies",
-      "description": "Case studies"
+      "title": "Mining Communication Case Studies",
+      "description": "Case studies in reputation, crisis and stakeholder communication for mining companies and projects, from exploration to operations."
     },
     "privacy": {
       "title": "Privacy Policy",
-      "description": "Privacy Policy"
+      "description": "How Mining & Reputation collects, uses and protects the personal data you share through this website, including the contact and newsletter forms."
     },
     "legal": {
       "title": "Legal Notice",
-      "description": "Legal Notice"
+      "description": "Legal notice for the Mining & Reputation website: publisher information, intellectual property and the terms that govern your use of the site."
     },
     "cookies": {
-      "title": "Cookies",
-      "description": "Cookies"
+      "title": "Cookie Policy",
+      "description": "Which cookies the Mining & Reputation website uses, what each one is for, and how you can review or change your cookie preferences at any time."
+    },
+    "og": {
+      "alt": "Mining & Reputation — strategic communication and reputation for the mining industry"
     }
   },
   "nav": {
@@ -370,7 +373,9 @@
           "Prepare",
           "Respond",
           "Recover"
-        ]
+        ],
+        "metaTitle": "Crisis Communication for Mining Companies",
+        "metaDescription": "Crisis preparedness, media response and stakeholder communication for mining companies facing incidents, community tensions or regulatory scrutiny."
       },
       "media": {
         "title": "Media Relations & Spokesperson Strategy",
@@ -391,7 +396,9 @@
           "Prepare",
           "Engage",
           "Measure"
-        ]
+        ],
+        "metaTitle": "Mining Media Relations & Spokesperson Strategy",
+        "metaDescription": "Media strategy, press relations and spokesperson training that give mining executives a clear, credible voice with journalists and the public."
       },
       "esg": {
         "title": "ESG, CSR & Social Licence to Operate",
@@ -412,7 +419,9 @@
           "Frame",
           "Evidence",
           "Communicate"
-        ]
+        ],
+        "metaTitle": "ESG & Social Licence Communication for Mining",
+        "metaDescription": "Turn ESG and CSR commitments into credible narratives and reporting that strengthen a mining project's social licence to operate."
       },
       "community": {
         "title": "Community Relations",
@@ -433,7 +442,9 @@
           "Map",
           "Engage",
           "Sustain"
-        ]
+        ],
+        "metaTitle": "Community Relations for Mining Projects",
+        "metaDescription": "Stakeholder mapping, local consultation and grievance communication that build lasting dialogue between mining operations and communities."
       },
       "financial": {
         "title": "Financial Communication",
@@ -454,7 +465,9 @@
           "Structure",
           "Communicate",
           "Review"
-        ]
+        ],
+        "metaTitle": "Financial & Investor Communication for Mining",
+        "metaDescription": "Investor messaging, results communication and capital markets narratives that help mining companies explain value, risk and strategy."
       },
       "digital": {
         "title": "Digital Reputation & Monitoring",
@@ -475,7 +488,9 @@
           "Detect",
           "Analyse",
           "Act"
-        ]
+        ],
+        "metaTitle": "Digital Reputation Monitoring for Mining",
+        "metaDescription": "Online reputation audits, media and social monitoring and early issue detection to protect how your mining company is perceived online."
       }
     }
   },

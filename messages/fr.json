@@ -1,44 +1,47 @@
 {
   "metadata": {
-    "siteName": "Mining Reputation",
+    "siteName": "Mining & Reputation",
     "home": {
-      "title": "Mining Reputation",
-      "description": "Conseil en stratégie de réputation et communication pour le secteur minier et des minéraux critiques."
+      "title": "Mining & Reputation | Réputation et communication minières",
+      "description": "Conseil en communication stratégique et gestion de la réputation pour les entreprises minières : crise, médias, ESG, communautés et investisseurs."
     },
     "about": {
-      "title": "À propos",
-      "description": "Qui nous sommes et comment nous accompagnons exploitants, investisseurs et régulateurs du secteur minier."
+      "title": "À propos : conseil en communication minière",
+      "description": "Mining & Reputation aide les entreprises minières à bâtir la confiance avec les communautés, les États, les investisseurs et les médias."
     },
     "blog": {
-      "title": "Blog & Médias",
-      "description": "Analyses et commentaires sur la réputation, la licence d'exploitation et la confiance des parties prenantes dans le secteur minier."
+      "title": "Analyses, interviews et actualités minières",
+      "description": "Analyses, interviews, actualités et rapports sur la réputation, les parties prenantes, l'ESG et la communication dans le secteur minier."
     },
     "preloader": {
       "label": "Chargement"
     },
     "expertise": {
-      "title": "Expertise",
-      "description": "Stratégie de réputation, dialogue avec les parties prenantes et conseil en communication pour le secteur minier."
+      "title": "Expertises en communication minière",
+      "description": "Communication de crise, relations médias, ESG et licence sociale, relations communautaires, communication financière et e-réputation pour le secteur minier."
     },
     "contact": {
-      "title": "Contact",
-      "description": "Parlons réputation, confiance et communication avec les parties prenantes dans le secteur minier."
+      "title": "Contact : conseil en communication minière",
+      "description": "Parlons de votre préparation aux crises, de vos relations médias, de votre communication ESG ou du dialogue avec les parties prenantes de votre projet minier."
     },
     "caseStudies": {
-      "title": "Études de cas",
-      "description": "Études de cas"
+      "title": "Études de cas en communication minière",
+      "description": "Études de cas en réputation, communication de crise et relations avec les parties prenantes pour des entreprises et projets miniers."
     },
     "privacy": {
       "title": "Politique de confidentialité",
-      "description": "Politique de confidentialité"
+      "description": "Comment Mining & Reputation collecte, utilise et protège les données personnelles transmises via ce site, notamment par les formulaires de contact et de newsletter."
     },
     "legal": {
       "title": "Mentions légales",
-      "description": "Mentions légales"
+      "description": "Mentions légales du site Mining & Reputation : informations sur l'éditeur, propriété intellectuelle et conditions d'utilisation du site."
     },
     "cookies": {
-      "title": "Cookies",
-      "description": "Cookies"
+      "title": "Politique relative aux cookies",
+      "description": "Les cookies utilisés par le site Mining & Reputation, la finalité de chacun et la manière de consulter ou de modifier vos préférences à tout moment."
+    },
+    "og": {
+      "alt": "Mining & Reputation — communication stratégique et réputation pour l'industrie minière"
     }
   },
   "nav": {
@@ -370,7 +373,9 @@
           "Préparer",
           "Répondre",
           "Reconstruire"
-        ]
+        ],
+        "metaTitle": "Communication de crise pour le secteur minier",
+        "metaDescription": "Préparation aux crises, réponse médiatique et communication avec les parties prenantes pour les entreprises minières face aux incidents et aux tensions."
       },
       "media": {
         "title": "Relations médias & stratégie de porte-parole",
@@ -391,7 +396,9 @@
           "Préparer",
           "Engager",
           "Mesurer"
-        ]
+        ],
+        "metaTitle": "Relations médias et porte-parole miniers",
+        "metaDescription": "Stratégie médias, relations presse et formation des porte-parole pour donner aux dirigeants miniers une voix claire et crédible auprès des journalistes."
       },
       "esg": {
         "title": "ESG, RSE & licence sociale d’exploitation",
@@ -412,7 +419,9 @@
           "Cadrer",
           "Prouver",
           "Communiquer"
-        ]
+        ],
+        "metaTitle": "Communication ESG, RSE et licence sociale minière",
+        "metaDescription": "Transformer les engagements ESG et RSE en récits et rapports crédibles qui renforcent la licence sociale d'exploitation des projets miniers."
       },
       "community": {
         "title": "Relations avec les communautés",
@@ -433,7 +442,9 @@
           "Cartographier",
           "Engager",
           "Pérenniser"
-        ]
+        ],
+        "metaTitle": "Relations communautaires pour projets miniers",
+        "metaDescription": "Cartographie des parties prenantes, consultation locale et gestion des griefs pour un dialogue durable entre opérations minières et communautés."
       },
       "financial": {
         "title": "Communication financière",
@@ -454,7 +465,9 @@
           "Structurer",
           "Communiquer",
           "Réviser"
-        ]
+        ],
+        "metaTitle": "Communication financière des sociétés minières",
+        "metaDescription": "Messages investisseurs, communication des résultats et récit de marché pour expliquer la valeur, les risques et la stratégie des sociétés minières."
       },
       "digital": {
         "title": "Réputation numérique & veille",
@@ -475,7 +488,9 @@
           "Détecter",
           "Analyser",
           "Agir"
-        ]
+        ],
+        "metaTitle": "E-réputation et veille pour le secteur minier",
+        "metaDescription": "Audit de réputation en ligne, veille médias et réseaux sociaux et détection des signaux faibles pour protéger l'image de votre entreprise minière."
       }
     }
   },

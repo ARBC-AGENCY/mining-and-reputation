@@ -7,7 +7,10 @@ import { Link } from "@/i18n/navigation";
 import { VideoEmbed } from "@/components/media/VideoEmbed";
 import { urlFor } from "@/sanity/lib/image";
 import { routing, type Locale } from "@/i18n/routing";
-import { alternatesFor } from "@/lib/metadata";
+import { alternatesFor, localeUrl, openGraphBase } from "@/lib/metadata";
+import { SITE_NAME } from "@/lib/site";
+import { article as articleLd, breadcrumbs } from "@/lib/structured-data";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { client } from "@/sanity/lib/client";
 import { sanityFetch } from "@/sanity/lib/live";
 import { POST_QUERY, POST_SLUGS_QUERY } from "@/sanity/lib/queries";
@@ -26,6 +29,26 @@ export async function generateStaticParams() {
   );
 }
 
+/**
+ * A post written in one language is still served under both locales. When
+ * the editor has set its language, both URLs name that version as canonical
+ * (and only it is offered as an alternate), so search engines index the
+ * original once instead of seeing two near-duplicates.
+ */
+function postAlternates(
+  locale: Locale,
+  slug: string,
+  language: string | null | undefined,
+): NonNullable<Metadata["alternates"]> {
+  const path = `/blog/${slug}`;
+  if (language !== "en" && language !== "fr") return alternatesFor(locale, path);
+  const original = localeUrl(language, path);
+  return {
+    canonical: original,
+    languages: { [language]: original, "x-default": original },
+  };
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const { data: article } = await sanityFetch({
@@ -36,16 +59,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!article) return {};
 
+  const title = article.seo?.metaTitle || article.title || SITE_NAME;
+  const description = article.seo?.metaDescription || article.excerpt || undefined;
+
   return {
-    title: article.title,
-    description: article.excerpt ?? undefined,
-    alternates: alternatesFor(locale, `/blog/${slug}`),
+    title,
+    description,
+    alternates: postAlternates(locale, slug, article.language),
+    // Share image: opengraph-image.tsx beside this page.
     openGraph: {
+      ...openGraphBase(locale),
       type: "article",
-      title: article.title ?? undefined,
-      description: article.excerpt ?? undefined,
+      title,
+      description,
+      url: localeUrl(locale, `/blog/${slug}`),
       publishedTime: article.publishedAt ?? undefined,
+      modifiedTime: article._updatedAt ?? undefined,
+      authors: article.author?.name ? [article.author.name] : undefined,
     },
+    ...(article.seo?.noIndex ? { robots: { index: false, follow: true } } : {}),
   };
 }
 
@@ -79,8 +111,30 @@ export default async function ArticlePage({ params }: Props) {
     }
   }
 
+  const url = localeUrl(locale, `/blog/${slug}`);
+  const tNav = await getTranslations("nav");
+
   return (
     <article className="mx-auto max-w-3xl px-6 pb-20 pt-36">
+      <JsonLd
+        data={articleLd({
+          headline: article.seo?.metaTitle || article.title || SITE_NAME,
+          description: article.seo?.metaDescription || article.excerpt,
+          url,
+          image: poster,
+          datePublished: article.publishedAt,
+          dateModified: article._updatedAt,
+          author: article.author?.name,
+          locale: article.language ?? locale,
+        })}
+      />
+      <JsonLd
+        data={breadcrumbs([
+          [tNav("home"), localeUrl(locale)],
+          [tNav("blog"), localeUrl(locale, "/blog")],
+          [article.title ?? SITE_NAME, url],
+        ])}
+      />
       <Link
         href="/blog"
         className="text-grey-light/60 hover:text-gold text-sm transition-colors"

@@ -48,6 +48,22 @@ export const postType = defineType({
     }),
 
     defineField({
+      name: "language",
+      title: "Language",
+      description:
+        "The language this post is written in. Every post is shown under both the English and French site; this tells search engines which of the two is the original, so they don't treat the other as duplicate content.",
+      type: "string",
+      options: {
+        list: [
+          { title: "English", value: "en" },
+          { title: "Français", value: "fr" },
+        ],
+        layout: "radio",
+        direction: "horizontal",
+      },
+    }),
+
+    defineField({
       name: "excerpt",
       title: "Excerpt",
       type: "text",
@@ -130,6 +146,15 @@ export const postType = defineType({
         "Drives the cross-links between editorial content and service pages.",
       type: "array",
       of: [{ type: "reference", to: [{ type: "expertise" }] }],
+    }),
+
+    defineField({
+      name: "seo",
+      title: "SEO",
+      description:
+        "Optional. Overrides the title, excerpt and cover image in search results and social previews.",
+      type: "seo",
+      options: { collapsible: true, collapsed: true },
     }),
   ],
 
