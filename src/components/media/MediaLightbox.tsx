@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { parseVideo } from "@/lib/video";
+import { lockScroll, unlockScroll } from "@/lib/scroll";
 
 export type MediaItem = {
   /** "video" plays an embed; "image" shows the still. */
@@ -56,8 +57,7 @@ export function MediaLightbox({ items, openAt, onClose }: Props) {
     restoreFocusTo.current = document.activeElement as HTMLElement | null;
     closeRef.current?.focus();
 
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    lockScroll();
 
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") return onClose();
@@ -83,7 +83,7 @@ export function MediaLightbox({ items, openAt, onClose }: Props) {
     window.addEventListener("keydown", onKey);
     return () => {
       window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
+      unlockScroll();
       restoreFocusTo.current?.focus?.();
     };
   }, [open, count, go, onClose]);

@@ -143,7 +143,7 @@ export async function BlogSection() {
                       )}
                     </div>
                     <div className="flex flex-1 flex-col p-6">
-                      <span className="text-[#F7C15D] text-[0.7rem] font-medium tracking-[0.2em] uppercase">
+                      <span className="text-[#F7C15D] text-xs font-medium tracking-[0.2em] uppercase">
                         {formatLabel(post.format)}
                       </span>
                       <h3 className="font-display mt-3 text-base leading-snug text-balance text-white transition-colors group-hover:text-[#F7C15D] md:text-lg">

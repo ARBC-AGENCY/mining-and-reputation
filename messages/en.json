@@ -144,10 +144,11 @@
   },
   "home": {
     "hero": {
-      "brand": "Mining & Reputation",
+      "titleLead": "Mining",
+      "titleRest": "moves\nresources",
+      "statementLead": "Reputation",
+      "statementRest": "moves everything else",
       "scrollHint": "Scroll to explore",
-      "imageAlt": "Aerial view of a mine site at dusk",
-      "title": "Mining moves resources. Reputation moves everything else.",
       "description": "Mining & Reputation helps mining companies build trust, protect their reputation and communicate effectively with the stakeholders who shape their future.",
       "cta": "Discover our expertise"
     },
@@ -159,8 +160,9 @@
       "cta": "Read our manifesto"
     },
     "expertise": {
-      "heading": "Expertise for every dimension of reputation",
+      "headingLead": "Expertise",
       "intro": "From community relations to crisis management, we help mining organisations communicate with clarity, credibility and consistency.",
+      "headingRest": "for every dimension of reputation",
       "cta": "Explore all expertise",
       "carouselLabel": "Areas of expertise",
       "cards": {
@@ -191,8 +193,9 @@
       }
     },
     "sectors": {
-      "heading": "Understanding mining means understanding its realities.",
-      "intro": "Different commodities, geographies and stages of development create different communication challenges. Our approach is adapted to the realities of each project and market.",
+      "headingLead": "Understanding",
+      "headingAccent": "mining",
+      "headingRest": "means understanding its realities.",
       "cards": {
         "gold": {
           "title": "Gold & Precious Metals",
@@ -329,7 +332,8 @@
   },
   "expertise": {
     "hero": {
-      "heading": "Communication expertise built for the mining industry",
+      "headingLead": "Communication expertise",
+      "headingRest": "built for the mining industry",
       "text": "Mining organisations face reputation challenges that cannot be addressed with generic communication strategies. We combine specialised expertise to help organisations anticipate risk, strengthen trust and communicate effectively."
     },
     "labels": {
@@ -338,7 +342,8 @@
       "related": "Related articles",
       "relatedEmpty": "Articles on this expertise are on their way.",
       "all": "All expertise",
-      "explore": "Explore this expertise"
+      "explore": "Explore this expertise",
+      "indexHeading": "All six areas at a glance"
     },
     "cta": {
       "heading": "Facing a sensitive communications issue?",
@@ -473,5 +478,12 @@
         ]
       }
     }
+  },
+  "carousel": {
+    "previous": "Previous expertise",
+    "next": "Next expertise",
+    "pause": "Pause automatic rotation",
+    "play": "Start automatic rotation",
+    "position": "{current} of {total}"
   }
 }

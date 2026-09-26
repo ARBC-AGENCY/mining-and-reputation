@@ -19,7 +19,7 @@ type Props = {
  * its visible one, so if JS fails or is blocked the content still renders.
  * Honours prefers-reduced-motion via gsap.matchMedia.
  */
-export function Reveal({ children, y = 24, delay = 0, className }: Props) {
+export function Reveal({ children, y = 32, delay = 0, className }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -31,8 +31,8 @@ export function Reveal({ children, y = 24, delay = 0, className }: Props) {
           opacity: 0,
           y,
           delay,
-          duration: 0.8,
-          ease: "power2.out",
+          duration: 1.1,
+          ease: "expo.out",
           scrollTrigger: {
             trigger: ref.current,
             start: "top 85%",

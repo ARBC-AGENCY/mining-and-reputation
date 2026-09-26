@@ -144,10 +144,11 @@
   },
   "home": {
     "hero": {
-      "brand": "Mining & Reputation",
+      "titleLead": "Les mines",
+      "titleRest": "déplacent\ndes ressources",
+      "statementLead": "La réputation",
+      "statementRest": "déplace tout le reste",
       "scrollHint": "Faites défiler pour découvrir",
-      "imageAlt": "Vue aérienne d'un site minier au crépuscule",
-      "title": "Les mines déplacent des ressources. La réputation déplace tout le reste.",
       "description": "Mining & Reputation accompagne les entreprises minières pour bâtir la confiance, protéger leur réputation et communiquer efficacement avec les parties prenantes qui façonnent leur avenir.",
       "cta": "Découvrir notre expertise"
     },
@@ -159,8 +160,9 @@
       "cta": "Lire notre manifeste"
     },
     "expertise": {
-      "heading": "Une expertise pour chaque dimension de la réputation",
+      "headingLead": "Une expertise",
       "intro": "Des relations avec les communautés à la gestion de crise, nous aidons les organisations minières à communiquer avec clarté, crédibilité et constance.",
+      "headingRest": "pour chaque dimension de la réputation",
       "cta": "Découvrir toutes nos expertises",
       "carouselLabel": "Domaines d'expertise",
       "cards": {
@@ -191,8 +193,9 @@
       }
     },
     "sectors": {
-      "heading": "Comprendre le secteur minier, c'est comprendre ses réalités.",
-      "intro": "Chaque matière première, chaque géographie et chaque stade de développement crée des enjeux de communication différents. Notre approche s'adapte aux réalités de chaque projet et de chaque marché.",
+      "headingLead": "Comprendre",
+      "headingAccent": "le secteur minier,",
+      "headingRest": "c'est comprendre ses réalités.",
       "cards": {
         "gold": {
           "title": "Or & métaux précieux",
@@ -329,7 +332,8 @@
   },
   "expertise": {
     "hero": {
-      "heading": "Une expertise en communication conçue pour l’industrie minière",
+      "headingLead": "Une expertise",
+      "headingRest": "en communication conçue pour l’industrie minière",
       "text": "Les organisations minières font face à des enjeux de réputation que des stratégies de communication génériques ne peuvent pas traiter. Nous combinons des expertises spécialisées pour aider les organisations à anticiper les risques, renforcer la confiance et communiquer efficacement."
     },
     "labels": {
@@ -338,7 +342,8 @@
       "related": "Articles liés",
       "relatedEmpty": "Les articles sur cette expertise arrivent bientôt.",
       "all": "Toutes les expertises",
-      "explore": "Découvrir cette expertise"
+      "explore": "Découvrir cette expertise",
+      "indexHeading": "Nos six expertises en un coup d’œil"
     },
     "cta": {
       "heading": "Vous faites face à un enjeu de communication sensible ?",
@@ -473,5 +478,12 @@
         ]
       }
     }
+  },
+  "carousel": {
+    "previous": "Expertise précédente",
+    "next": "Expertise suivante",
+    "pause": "Mettre en pause la rotation automatique",
+    "play": "Lancer la rotation automatique",
+    "position": "{current} sur {total}"
   }
 }

@@ -1,8 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { LogoMark } from "@/components/brand/Logo";
 
 const LOTTIE_SRC = "/animations/preloader.json";
 /**
@@ -47,6 +47,9 @@ export function Preloader({ label }: { label: string }) {
 
     window.setTimeout(() => {
       setLeaving(true);
+      // Release the page as the curtain starts to lift, not after: intro
+      // animations (see whenPageReady) key off this and overlap the fade.
+      document.documentElement.removeAttribute("data-preloading");
       window.setTimeout(() => setMounted(false), FADE_MS);
     }, wait);
   }, []);
@@ -103,14 +106,7 @@ export function Preloader({ label }: { label: string }) {
           className="h-40 w-40 md:h-56 md:w-56"
         />
       ) : hasLottie === false ? (
-        <Image
-          src="/images/LOGO-WHITE@600.png"
-          alt=""
-          width={600}
-          height={167}
-          priority
-          className="w-40 animate-pulse md:w-56"
-        />
+        <LogoMark className="h-auto w-20 animate-pulse md:w-28" />
       ) : null}
     </div>
   );

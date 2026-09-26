@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import { Logo } from "@/components/brand/Logo";
 import SpecularButton from "@/components/SpecularButton";
 import { LocaleSwitcher } from "./LocaleSwitcher";
-import { useHeaderReveal } from "@/components/providers/HeaderRevealProvider";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { gsap, useGSAP } from "@/lib/gsap";
+import { lockScroll, unlockScroll } from "@/lib/scroll";
 
 export type HeaderStrings = {
   home: string;
@@ -25,7 +25,6 @@ const GLASS =
   "shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.25)]";
 
 export function HeaderShell({ strings }: { strings: HeaderStrings }) {
-  const { revealed } = useHeaderReveal();
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
@@ -49,11 +48,10 @@ export function HeaderShell({ strings }: { strings: HeaderStrings }) {
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    lockScroll();
     window.addEventListener("keydown", onKey);
     return () => {
-      document.body.style.overflow = prev;
+      unlockScroll();
       window.removeEventListener("keydown", onKey);
     };
   }, [open]);
@@ -118,31 +116,21 @@ export function HeaderShell({ strings }: { strings: HeaderStrings }) {
   return (
     <header
       data-site-header
-      // Visual state is driven by CSS (see globals.css) rather than an inline
-      // style, so the header can be hidden from the very first server paint on
-      // hero pages — an inline style would only apply after hydration and the
-      // header would visibly flash in and out.
-      data-revealed={revealed ? "true" : "false"}
       // Fixed rather than absolute so the nav stays reachable past the hero.
-      className="pointer-events-none fixed inset-x-0 top-0 z-50 transition-opacity duration-700 ease-out"
-      inert={!revealed}
-      aria-hidden={!revealed}
+      className="pointer-events-none fixed inset-x-0 top-0 z-50"
     >
       {/* relative z-50 keeps the bar above the open panel (z-40) inside the
           header's stacking context — otherwise the panel covers the X and
           the menu can only be closed with Escape, which phones lack. */}
       {/* Mobile: the bar itself is the glass pill, since there is no nav
           pill to carry it. Reset at md, where the nav pill takes over. */}
-      <div className="pointer-events-auto relative z-50 mx-4 mt-4 flex items-center justify-between gap-4 rounded-[18px] border border-white/10 bg-white/6 px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.25)] backdrop-blur-xl md:mx-auto md:mt-0 md:max-w-7xl md:rounded-none md:border-0 md:bg-transparent md:px-8 md:py-5 md:shadow-none md:backdrop-blur-none">
-        <Link href="/" aria-label={strings.home} className="shrink-0">
-          <Image
-            src="/images/LOGO-WHITE@600.png"
-            alt="Mining &amp; Reputation"
-            width={600}
-            height={167}
-            priority
-            className="h-8 w-auto md:h-9"
-          />
+      <div
+        // The home hero's intro timeline slides this bar in.
+        data-header-bar
+        className="pointer-events-auto relative z-50 mx-4 mt-4 flex items-center justify-between gap-4 rounded-[18px] border border-white/10 bg-white/6 px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.25)] backdrop-blur-xl md:mx-auto md:mt-0 md:max-w-7xl md:rounded-none md:border-0 md:bg-transparent md:px-8 md:py-5 md:shadow-none md:backdrop-blur-none lg:grid lg:max-w-[84%] lg:grid-cols-[1fr_auto_1fr] lg:px-0"
+      >
+        <Link href="/" aria-label={strings.home} className="shrink-0 lg:justify-self-start">
+          <Logo className="h-8 w-auto lg:h-9" />
         </Link>
 
         <nav
@@ -154,7 +142,7 @@ export function HeaderShell({ strings }: { strings: HeaderStrings }) {
               key={link.href}
               href={link.href}
               aria-current={isActive(link.href) ? "page" : undefined}
-              className={`rounded-[12px] px-4 py-2 text-sm transition-colors ${
+              className={`rounded-[12px] px-3 py-2 text-sm whitespace-nowrap transition-colors lg:px-4 ${
                 isActive(link.href)
                   ? "bg-white/10 text-[#F7C15D]"
                   : "text-white/80 hover:bg-white/10 hover:text-white"
@@ -169,9 +157,10 @@ export function HeaderShell({ strings }: { strings: HeaderStrings }) {
           </div>
         </nav>
 
-        <div className="hidden shrink-0 md:block">
+        <div className="hidden shrink-0 md:block lg:justify-self-end">
           <SpecularButton
             size="sm"
+            className="whitespace-nowrap"
             radius={18}
             textColor="#E6E6E6"
             lineColor="#F7C15D"

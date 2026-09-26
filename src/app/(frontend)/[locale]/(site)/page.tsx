@@ -11,16 +11,6 @@ import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
 import type { Locale } from "@/i18n/routing";
 import { alternatesFor } from "@/lib/metadata";
 
-// Order here drives the 01..06 numbering on the cards.
-const CARD_KEYS = [
-  "crisis",
-  "media",
-  "esg",
-  "community",
-  "financial",
-  "digital",
-] as const;
-
 type Props = {
   params: Promise<{ locale: Locale }>;
 };
@@ -41,39 +31,24 @@ export default async function Home({ params }: Props) {
   setRequestLocale(locale);
 
   const t = await getTranslations("home.hero");
-  const tx = await getTranslations("home.expertise");
 
   return (
     <>
       <HomeHero
         strings={{
-          brand: t("brand"),
-          scrollHint: t("scrollHint"),
-          imageAlt: t("imageAlt"),
-          title: t("title"),
+          titleLead: t("titleLead"),
+          titleRest: t("titleRest"),
+          statementLead: t("statementLead"),
+          statementRest: t("statementRest"),
           description: t("description"),
           cta: t("cta"),
+          scrollHint: t("scrollHint"),
         }}
       />
+
       <AboutSection />
 
-      <ExpertiseSection
-        strings={{
-          heading: tx("heading"),
-          intro: tx("intro"),
-          cta: tx("cta"),
-          carouselLabel: tx("carouselLabel"),
-          cards: CARD_KEYS.map((key, i) => ({
-            eyebrow: String(i + 1).padStart(2, "0"),
-            title: tx(`cards.${key}.title`),
-            description: tx(`cards.${key}.description`),
-            image: `/images/expertise/${i + 1}@800.webp`,
-            // Decorative: the card already renders its title and description as
-            // real text, so alt text here would only duplicate them.
-            alt: "",
-          })),
-        }}
-      />
+      <ExpertiseSection />
 
       <SectorsSection />
 

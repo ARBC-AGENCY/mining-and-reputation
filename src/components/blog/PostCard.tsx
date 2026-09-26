@@ -93,13 +93,13 @@ export async function PostCard({ post }: { post: PostCardData }) {
 
       <div className="flex flex-1 flex-col p-6">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-[0.7rem] font-medium tracking-[0.18em] text-[#F7C15D] uppercase">
+          <span className="text-xs font-medium tracking-[0.18em] text-[#F7C15D] uppercase">
             {label}
           </span>
           {post.categories?.[0]?.title && (
             <>
               <span className="text-grey-light/30" aria-hidden="true">·</span>
-              <span className="text-grey-light/50 text-[0.7rem] tracking-wide uppercase">
+              <span className="text-grey-light/50 text-xs tracking-wide uppercase">
                 {post.categories[0].title}
               </span>
             </>

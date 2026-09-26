@@ -1,16 +1,17 @@
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { ArbcLink } from "@/components/ArbcLink";
+import { Logo } from "@/components/brand/Logo";
 import { Link } from "@/i18n/navigation";
 import { SOCIAL_LINKS } from "@/lib/social";
 
+// Footer label key → expertise page slug (see EXPERTISE_AREAS).
 const EXPERTISE_ITEMS = [
-  "crisis",
-  "media",
-  "esg",
-  "communities",
-  "financial",
-  "digital",
+  { key: "crisis", slug: "crisis-communication" },
+  { key: "media", slug: "media-relations" },
+  { key: "esg", slug: "esg-csr" },
+  { key: "communities", slug: "community-relations" },
+  { key: "financial", slug: "financial-communication" },
+  { key: "digital", slug: "digital-reputation" },
 ] as const;
 
 // Each maps to a hub tab, so these deep-link rather than dumping on the index.
@@ -46,14 +47,8 @@ export async function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 md:py-20 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
           <div className="lg:col-span-2">
-            <Link href="/" aria-label={tMeta("siteName")}>
-              <Image
-                src="/images/LOGO-WHITE@600.png"
-                alt={tMeta("siteName")}
-                width={600}
-                height={167}
-                className="h-8 w-auto"
-              />
+            <Link href="/" aria-label={tMeta("siteName")} className="inline-block">
+              <Logo className="h-9 w-auto" />
             </Link>
             <p className="text-grey-light/60 mt-6 max-w-xs text-sm leading-relaxed">
               {t("tagline")}
@@ -66,11 +61,9 @@ export async function Footer() {
           <nav aria-label={t("expertise")}>
             <h2 className={heading}>{t("expertise")}</h2>
             <ul className="mt-5 space-y-3">
-              {EXPERTISE_ITEMS.map((key) => (
+              {EXPERTISE_ITEMS.map(({ key, slug }) => (
                 <li key={key}>
-                  {/* Individual expertise pages don't exist yet, so these all
-                      point at the index rather than 404ing. */}
-                  <Link href="/expertise" className={item}>
+                  <Link href={`/expertise/${slug}`} className={item}>
                     {t(`expertiseItems.${key}` as "expertiseItems.crisis")}
                   </Link>
                 </li>

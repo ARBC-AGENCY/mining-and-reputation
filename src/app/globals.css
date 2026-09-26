@@ -1,8 +1,12 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "lenis/dist/lenis.css";
 
 @custom-variant dark (&:is(.dark *));
+/* Short screens (iPhone SE, small landscape phones): lets tall stacks shed
+   decoration so their copy still fits the first screen. */
+@custom-variant short (@media (max-height: 640px));
 
 /* ============================================================
    Fonts
@@ -100,6 +104,8 @@
   --color-green: #8eb467;
   --color-green-dark: #353f2c;
   --color-grey-light: #e6e6e6;
+  /* The flat panel beside the about photo (sampled from the design). */
+  --color-panel: #042527;
 
   /* Typography */
   --font-sans: "Fivo Sans Modern", ui-sans-serif, system-ui, -apple-system,
@@ -215,44 +221,95 @@
    Preloader
    ============================================================ */
 
-/* Hold the page still underneath while the preloader is up. */
-html[data-preloading] body {
+/* Hold the page still underneath while the preloader is up, from the first
+   paint (before any JS). Set on <html>, the element that owns the viewport
+   scroll; <SmoothScroll /> holds Lenis for the same span. */
+html[data-preloading] {
   overflow: hidden;
 }
 
 /* ============================================================
-   Site header reveal
+   Redesign — section surfaces
    ============================================================ */
 
-/* The header is hidden from the FIRST server paint on any page containing a
-   scroll hero, and revealed once the hero sets data-hero-revealed. Doing this
-   in CSS rather than an inline style is what prevents the header flashing in
-   and back out during hydration. */
-body:has([data-scroll-hero]:not([data-hero-revealed])) [data-site-header] {
-  opacity: 0;
+/* Expertise: Asparagus green lit by a Geebung glow from the lower left,
+   rebuilt in CSS from the designer's FULL ROOO backdrop. */
+.bg-expertise {
+  background:
+    radial-gradient(
+      ellipse 34% 52% at 17% 86%,
+      rgb(240 193 94 / 0.95) 0%,
+      rgb(233 191 95 / 0.7) 32%,
+      rgb(197 187 98 / 0.35) 62%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 40% 60% at 0% 60%,
+      rgb(200 188 98 / 0.45) 0%,
+      transparent 100%
+    ),
+    var(--color-green);
 }
 
-body:has([data-scroll-hero]:not([data-hero-revealed])) [data-site-header] * {
-  pointer-events: none;
+/* Sectors: the dark brand base with a low glow behind the rock. */
+.bg-sectors {
+  background:
+    radial-gradient(
+      circle at 50% 52%,
+      rgb(18 58 50 / 0.75) 0%,
+      rgb(10 40 37 / 0.55) 22%,
+      transparent 52%
+    ),
+    var(--color-dark);
 }
 
 /* ============================================================
-   Scroll hint
+   Redesign — motion
    ============================================================ */
 
-/* Registered in @theme so Tailwind generates `animate-scroll-hint`. */
 @theme {
-  --animate-scroll-hint: scroll-hint 1.8s ease-in-out infinite;
+  --animate-hero-breathe: hero-breathe 22s ease-in-out infinite alternate;
+  --animate-hero-breathe-alt: hero-breathe-alt 26s ease-in-out infinite
+    alternate;
+  --animate-orbit: orbit 28s linear infinite;
 }
 
-@keyframes scroll-hint {
-  0%,
-  100% {
-    transform: translateY(0);
-    opacity: 0.55;
+/* A slow drift so the hero photographs never sit perfectly still. */
+@keyframes hero-breathe {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
   }
-  50% {
-    transform: translateY(4px);
-    opacity: 1;
+  to {
+    transform: scale(1.07) translate3d(-1.2%, -0.8%, 0);
   }
+}
+
+@keyframes hero-breathe-alt {
+  from {
+    transform: scale(1.06) translate3d(0.8%, 0.6%, 0);
+  }
+  to {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-breathe,
+  .animate-hero-breathe-alt {
+    animation: none;
+  }
+}
+
+/* SplitText line masks clip at the line box, which would shave accents and
+   descenders off tight display leading. Grow the clip box without moving
+   anything. */
+.split-line-mask {
+  padding-block: 0.08em 0.14em;
+  margin-block: -0.08em -0.14em;
 }

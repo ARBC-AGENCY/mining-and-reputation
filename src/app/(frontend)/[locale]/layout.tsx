@@ -6,6 +6,7 @@ import { routing } from "@/i18n/routing";
 import { siteUrl } from "@/lib/site";
 import { SanityLive } from "@/sanity/lib/live";
 import { Preloader } from "@/components/preloader/Preloader";
+import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import "../../globals.css";
 
 type Props = {
@@ -71,6 +72,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         />
         <NextIntlClientProvider>
           <Preloader label={t("preloader.label")} />
+          <SmoothScroll />
           {children}
         </NextIntlClientProvider>
         <SanityLive />
