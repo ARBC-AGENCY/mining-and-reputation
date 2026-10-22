@@ -24,6 +24,7 @@ const BLOG_ITEMS = [
 
 const COMPANY_ITEMS = [
   { key: "about", href: "/about" },
+  { key: "experts", href: "/experts" },
   { key: "caseStudies", href: "/case-studies" },
   { key: "contact", href: "/contact" },
 ] as const;
@@ -39,7 +40,8 @@ export async function Footer() {
   const tMeta = await getTranslations("metadata");
   const social = SOCIAL_LINKS.filter((s) => s.href);
 
-  const heading = "text-grey-light/50 text-xs font-medium tracking-[0.18em] uppercase";
+  const heading =
+    "text-grey-light/50 text-xs font-medium tracking-[0.18em] uppercase";
   const item = "text-grey-light/70 hover:text-gold text-sm transition-colors";
 
   return (
@@ -47,7 +49,11 @@ export async function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 md:py-20 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
           <div className="lg:col-span-2">
-            <Link href="/" aria-label={tMeta("siteName")} className="inline-block">
+            <Link
+              href="/"
+              aria-label={tMeta("siteName")}
+              className="inline-block"
+            >
               <Logo className="h-9 w-auto" />
             </Link>
             <p className="text-grey-light/60 mt-6 max-w-xs text-sm leading-relaxed">

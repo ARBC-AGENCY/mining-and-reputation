@@ -54,7 +54,8 @@
     "contact": "Contact",
     "expertise": "Expertise",
     "blog": "Blog & Media",
-    "talkToUs": "Talk to Us"
+    "talkToUs": "Talk to Us",
+    "experts": "Our Experts"
   },
   "footer": {
     "tagline": "Strategic communication and reputation for the mining industry.",
@@ -81,7 +82,8 @@
     "companyItems": {
       "about": "About",
       "caseStudies": "Case Studies",
-      "contact": "Contact"
+      "contact": "Contact",
+      "experts": "Our Experts"
     },
     "legal": {
       "privacy": "Privacy Policy",
@@ -368,12 +370,7 @@
           "Digital monitoring",
           "Post-crisis reputation recovery"
         ],
-        "approach": [
-          "Anticipate",
-          "Prepare",
-          "Respond",
-          "Recover"
-        ],
+        "approach": ["Anticipate", "Prepare", "Respond", "Recover"],
         "metaTitle": "Crisis Communication for Mining Companies",
         "metaDescription": "Crisis preparedness, media response and stakeholder communication for mining companies facing incidents, community tensions or regulatory scrutiny."
       },
@@ -391,12 +388,7 @@
           "Editorial placement",
           "Coverage analysis"
         ],
-        "approach": [
-          "Map",
-          "Prepare",
-          "Engage",
-          "Measure"
-        ],
+        "approach": ["Map", "Prepare", "Engage", "Measure"],
         "metaTitle": "Mining Media Relations & Spokesperson Strategy",
         "metaDescription": "Media strategy, press relations and spokesperson training that give mining executives a clear, credible voice with journalists and the public."
       },
@@ -414,12 +406,7 @@
           "Assurance-ready messaging",
           "Performance communication"
         ],
-        "approach": [
-          "Assess",
-          "Frame",
-          "Evidence",
-          "Communicate"
-        ],
+        "approach": ["Assess", "Frame", "Evidence", "Communicate"],
         "metaTitle": "ESG & Social Licence Communication for Mining",
         "metaDescription": "Turn ESG and CSR commitments into credible narratives and reporting that strengthen a mining project's social licence to operate."
       },
@@ -437,12 +424,7 @@
           "Engagement training",
           "Dialogue monitoring"
         ],
-        "approach": [
-          "Listen",
-          "Map",
-          "Engage",
-          "Sustain"
-        ],
+        "approach": ["Listen", "Map", "Engage", "Sustain"],
         "metaTitle": "Community Relations for Mining Projects",
         "metaDescription": "Stakeholder mapping, local consultation and grievance communication that build lasting dialogue between mining operations and communities."
       },
@@ -460,12 +442,7 @@
           "Management positioning",
           "Disclosure consistency"
         ],
-        "approach": [
-          "Align",
-          "Structure",
-          "Communicate",
-          "Review"
-        ],
+        "approach": ["Align", "Structure", "Communicate", "Review"],
         "metaTitle": "Financial & Investor Communication for Mining",
         "metaDescription": "Investor messaging, results communication and capital markets narratives that help mining companies explain value, risk and strategy."
       },
@@ -483,12 +460,7 @@
           "Community moderation guidance",
           "Reporting dashboards"
         ],
-        "approach": [
-          "Monitor",
-          "Detect",
-          "Analyse",
-          "Act"
-        ],
+        "approach": ["Monitor", "Detect", "Analyse", "Act"],
         "metaTitle": "Digital Reputation Monitoring for Mining",
         "metaDescription": "Online reputation audits, media and social monitoring and early issue detection to protect how your mining company is perceived online."
       }
@@ -500,5 +472,93 @@
     "pause": "Pause automatic rotation",
     "play": "Start automatic rotation",
     "position": "{current} of {total}"
+  },
+  "experts": {
+    "hero": {
+      "lead": "THE",
+      "highlight": "experts.",
+      "intro": "Behind every lasting reputation are people who understand what is at stake.",
+      "description": "Our experts combine experience, strategic insight and a deep understanding of the challenges facing organizations and their stakeholders."
+    },
+    "directory": {
+      "label": "OUR EXPERTS",
+      "count": "{count, plural, one {# expert} other {# experts}}",
+      "viewProfile": "Discover profile",
+      "comingSoon": "Full profile coming soon"
+    },
+    "profiles": {
+      "thomas": {
+        "role": "Development Communication & CSR Expert",
+        "name": "Thomas d'Aquin MOANANG",
+        "headline": "Where scientific understanding meets strategic communication.",
+        "intro": "A strategic communicator with over 15 years of experience in reputation, brand strategy and development communication.",
+        "biography": [
+          "Thomas d'Aquin MOANANG is a senior communications professional with more than 15 years of experience in strategic planning, institutional communication and brand reputation. His work brings together the analysis of audiences, communication strategy and the coordination of integrated campaigns.",
+          "Originally trained in geology and applied geophysics, he brings a distinctive understanding of technical and industrial environments. His professional experience includes communication assignments across telecommunications, cement manufacturing, financial services and development initiatives."
+        ],
+        "specialties": [
+          "Communication for development",
+          "Corporate social responsibility",
+          "Strategic communication",
+          "Brand reputation and positioning",
+          "Audience research and consumer insights",
+          "Institutional and integrated campaigns"
+        ],
+        "experiences": [
+          {
+            "organization": "MTN Cameroon",
+            "period": "2021–2024",
+            "title": "Strategic communication and campaign coordination",
+            "description": "Account Director responsible for coordinating strategic communication, integrated campaigns and brand communication activities for MTN Cameroon."
+          },
+          {
+            "organization": "Institut Français du Cameroun",
+            "period": "2025",
+            "title": "France Alumni — development communication",
+            "description": "Contribution to the France Alumni initiative in Douala through the development of a temporary media studio, interviews, audiovisual productions and communication activities around the blue economy."
+          },
+          {
+            "organization": "Dangote Cement Cameroon",
+            "period": "2025",
+            "title": "10th anniversary communication campaign",
+            "description": "Communication strategy and creative production activities supporting the company's tenth-anniversary campaign in Cameroon."
+          }
+        ],
+        "quote": "Let's build a better version of our brands every day."
+      },
+      "commsOfAfrica": {
+        "role": "Crisis Communication Expert",
+        "additionalRole": "Founder of COMMS OF AFRICA"
+      }
+    },
+    "teaser": {
+      "eyebrow": "THE PEOPLE BEHIND OUR EXPERTISE",
+      "title": "Expertise is human.",
+      "description": "Behind every strategic decision is a perspective shaped by experience. Discover the specialists who bring knowledge, judgment and commitment to Mining & Reputation.",
+      "button": "Meet our experts"
+    },
+
+    "detail": {
+      "back": "All experts",
+      "profileLabel": "EXPERT PROFILE",
+      "overview": "Professional overview",
+      "specialties": "Areas of expertise",
+      "experience": "Selected experience",
+      "experienceYears": "Years of experience",
+      "contactTitle": "Let's put expertise to work.",
+      "contactDescription": "Our experts bring experience and strategic perspective to complex communication challenges.",
+      "contactButton": "Start a conversation",
+      "nextExpert": "Explore more experts"
+    },
+    "cta": {
+      "eyebrow": "LET'S TALK",
+      "title": "The right expertise makes the difference.",
+      "description": "Facing a communication or reputation challenge? Let's explore how our expertise can support your ambitions.",
+      "button": "Get in touch"
+    },
+    "metadata": {
+      "title": "Our Experts",
+      "description": "Meet the specialists behind Mining & Reputation. Discover our expertise in development communication, crisis communication and reputation strategy."
+    }
   }
 }

@@ -54,7 +54,8 @@
     "contact": "Contact",
     "expertise": "Expertise",
     "blog": "Blog & Médias",
-    "talkToUs": "Parlons-en"
+    "talkToUs": "Parlons-en",
+    "experts": "Nos experts"
   },
   "footer": {
     "tagline": "Communication stratégique et réputation pour l'industrie minière.",
@@ -81,7 +82,8 @@
     "companyItems": {
       "about": "À propos",
       "caseStudies": "Études de cas",
-      "contact": "Contact"
+      "contact": "Contact",
+      "experts": "Nos experts"
     },
     "legal": {
       "privacy": "Politique de confidentialité",
@@ -368,12 +370,7 @@
           "Veille numérique",
           "Reconstruction de la réputation après crise"
         ],
-        "approach": [
-          "Anticiper",
-          "Préparer",
-          "Répondre",
-          "Reconstruire"
-        ],
+        "approach": ["Anticiper", "Préparer", "Répondre", "Reconstruire"],
         "metaTitle": "Communication de crise pour le secteur minier",
         "metaDescription": "Préparation aux crises, réponse médiatique et communication avec les parties prenantes pour les entreprises minières face aux incidents et aux tensions."
       },
@@ -391,12 +388,7 @@
           "Placement éditorial",
           "Analyse de la couverture"
         ],
-        "approach": [
-          "Cartographier",
-          "Préparer",
-          "Engager",
-          "Mesurer"
-        ],
+        "approach": ["Cartographier", "Préparer", "Engager", "Mesurer"],
         "metaTitle": "Relations médias et porte-parole miniers",
         "metaDescription": "Stratégie médias, relations presse et formation des porte-parole pour donner aux dirigeants miniers une voix claire et crédible auprès des journalistes."
       },
@@ -414,12 +406,7 @@
           "Messages vérifiables",
           "Communication de la performance"
         ],
-        "approach": [
-          "Évaluer",
-          "Cadrer",
-          "Prouver",
-          "Communiquer"
-        ],
+        "approach": ["Évaluer", "Cadrer", "Prouver", "Communiquer"],
         "metaTitle": "Communication ESG, RSE et licence sociale minière",
         "metaDescription": "Transformer les engagements ESG et RSE en récits et rapports crédibles qui renforcent la licence sociale d'exploitation des projets miniers."
       },
@@ -437,12 +424,7 @@
           "Formation à l’engagement",
           "Suivi du dialogue"
         ],
-        "approach": [
-          "Écouter",
-          "Cartographier",
-          "Engager",
-          "Pérenniser"
-        ],
+        "approach": ["Écouter", "Cartographier", "Engager", "Pérenniser"],
         "metaTitle": "Relations communautaires pour projets miniers",
         "metaDescription": "Cartographie des parties prenantes, consultation locale et gestion des griefs pour un dialogue durable entre opérations minières et communautés."
       },
@@ -460,12 +442,7 @@
           "Positionnement du management",
           "Cohérence de l’information"
         ],
-        "approach": [
-          "Aligner",
-          "Structurer",
-          "Communiquer",
-          "Réviser"
-        ],
+        "approach": ["Aligner", "Structurer", "Communiquer", "Réviser"],
         "metaTitle": "Communication financière des sociétés minières",
         "metaDescription": "Messages investisseurs, communication des résultats et récit de marché pour expliquer la valeur, les risques et la stratégie des sociétés minières."
       },
@@ -483,12 +460,7 @@
           "Cadrage de la modération",
           "Tableaux de bord de reporting"
         ],
-        "approach": [
-          "Surveiller",
-          "Détecter",
-          "Analyser",
-          "Agir"
-        ],
+        "approach": ["Surveiller", "Détecter", "Analyser", "Agir"],
         "metaTitle": "E-réputation et veille pour le secteur minier",
         "metaDescription": "Audit de réputation en ligne, veille médias et réseaux sociaux et détection des signaux faibles pour protéger l'image de votre entreprise minière."
       }
@@ -500,5 +472,93 @@
     "pause": "Mettre en pause la rotation automatique",
     "play": "Lancer la rotation automatique",
     "position": "{current} sur {total}"
+  },
+  "experts": {
+    "hero": {
+      "lead": "NOS",
+      "highlight": "experts.",
+      "intro": "Derrière chaque réputation durable, il y a des femmes et des hommes qui comprennent les enjeux.",
+      "description": "Nos experts conjuguent expérience, vision stratégique et connaissance approfondie des défis auxquels font face les organisations et leurs parties prenantes."
+    },
+    "directory": {
+      "label": "NOTRE RÉSEAU D'EXPERTS",
+      "count": "{count, plural, one {# expert} other {# experts}}",
+      "viewProfile": "Découvrir le profil",
+      "comingSoon": "Profil détaillé à venir"
+    },
+    "profiles": {
+      "thomas": {
+        "role": "Expert en communication pour le développement et RSE",
+        "name": "Thomas d'Aquin MOANANG",
+        "headline": "Quand la compréhension scientifique rencontre la communication stratégique.",
+        "intro": "Un stratège de la communication fort de plus de 15 ans d'expérience en réputation, stratégie de marque et communication pour le développement.",
+        "biography": [
+          "Thomas d'Aquin MOANANG est un professionnel senior de la communication, fort de plus de 15 années d'expérience en planification stratégique, communication institutionnelle et réputation de marque. Son parcours associe l'analyse des publics, la stratégie de communication et la coordination de campagnes intégrées.",
+          "Initialement formé en géologie et en géophysique appliquée, il possède une compréhension particulière des environnements techniques et industriels. Ses expériences professionnelles couvrent notamment les télécommunications, l'industrie cimentière, les services financiers et les initiatives de développement."
+        ],
+        "specialties": [
+          "Communication pour le développement",
+          "Responsabilité sociétale des entreprises",
+          "Communication stratégique",
+          "Réputation et positionnement de marque",
+          "Études des publics et insights consommateurs",
+          "Campagnes institutionnelles et intégrées"
+        ],
+        "experiences": [
+          {
+            "organization": "MTN Cameroon",
+            "period": "2021–2024",
+            "title": "Communication stratégique et coordination de campagnes",
+            "description": "Directeur de clientèle chargé de la coordination de la communication stratégique, des campagnes intégrées et des activités de communication de marque pour MTN Cameroon."
+          },
+          {
+            "organization": "Institut Français du Cameroun",
+            "period": "2025",
+            "title": "France Alumni — communication pour le développement",
+            "description": "Contribution à l'initiative France Alumni à Douala à travers la mise en place d'un studio média éphémère, la réalisation d'interviews, de productions audiovisuelles et d'actions de communication autour de l'économie bleue."
+          },
+          {
+            "organization": "Dangote Cement Cameroon",
+            "period": "2025",
+            "title": "Campagne de communication du 10e anniversaire",
+            "description": "Accompagnement en stratégie de communication et production créative dans le cadre de la campagne célébrant les dix ans de l'entreprise au Cameroun."
+          }
+        ],
+        "quote": "Construisons chaque jour une meilleure version de nos marques."
+      },
+      "commsOfAfrica": {
+        "role": "Expert en communication de crise",
+        "additionalRole": "Fondateur de COMMS OF AFRICA"
+      }
+    },
+    "teaser": {
+      "eyebrow": "LES VISAGES DE NOTRE EXPERTISE",
+      "title": "L'expertise est avant tout humaine.",
+      "description": "Derrière chaque décision stratégique se trouve un regard forgé par l'expérience. Découvrez les spécialistes qui apportent leur savoir-faire, leur discernement et leur engagement à Mining & Reputation.",
+      "button": "Découvrir nos experts"
+    },
+
+    "detail": {
+      "back": "Tous les experts",
+      "profileLabel": "PROFIL EXPERT",
+      "overview": "Présentation professionnelle",
+      "specialties": "Domaines d'expertise",
+      "experience": "Expériences sélectionnées",
+      "experienceYears": "Années d'expérience",
+      "contactTitle": "Mettons l'expertise au service de vos enjeux.",
+      "contactDescription": "Nos experts mobilisent leur expérience et leur vision stratégique pour répondre aux défis complexes de la communication.",
+      "contactButton": "Échangeons sur vos enjeux",
+      "nextExpert": "Découvrir d'autres experts"
+    },
+    "cta": {
+      "eyebrow": "ÉCHANGEONS",
+      "title": "La bonne expertise fait la différence.",
+      "description": "Vous faites face à un enjeu de communication ou de réputation ? Échangeons sur la manière dont notre expertise peut accompagner vos ambitions.",
+      "button": "Nous contacter"
+    },
+    "metadata": {
+      "title": "Nos experts",
+      "description": "Découvrez les experts de Mining & Reputation en communication pour le développement, communication de crise et stratégie de réputation."
+    }
   }
 }

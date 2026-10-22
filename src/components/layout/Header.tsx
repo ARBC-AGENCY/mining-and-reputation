@@ -13,6 +13,7 @@ export async function Header() {
     talkToUs: t("talkToUs"),
     links: [
       { href: "/expertise", label: t("expertise") },
+      { href: "/experts", label: t("experts") },
       { href: "/about", label: t("about") },
       { href: "/blog", label: t("blog") },
     ],

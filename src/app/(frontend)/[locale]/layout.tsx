@@ -12,6 +12,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { SanityLive } from "@/sanity/lib/live";
 import { Preloader } from "@/components/preloader/Preloader";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
+import Script from "next/script";
 import "../../globals.css";
 
 type Props = {

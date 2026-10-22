@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArbcLink } from "@/components/ArbcLink";
 import { Reveal } from "@/components/motion/Reveal";
 import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
+import { ExpertsTeaser } from "@/components/experts/ExpertsTeaser";
 import type { Locale } from "@/i18n/routing";
 import { alternatesFor } from "@/lib/metadata";
 
@@ -172,6 +173,8 @@ export default async function AboutPage({ params }: Props) {
           </Reveal>
         </div>
       </section>
+
+      <ExpertsTeaser />
 
       {/* 6. Shared closing CTA, same component as the homepage. */}
       <FinalCtaSection />

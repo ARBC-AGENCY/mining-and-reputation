@@ -20,6 +20,7 @@ const PAGES = [
   "/legal",
   "/privacy",
   "/cookies",
+  "/experts",
 ];
 
 const bothLocales = (path: string) => ({
