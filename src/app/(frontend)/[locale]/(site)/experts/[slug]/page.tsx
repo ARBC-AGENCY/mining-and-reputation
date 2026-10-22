@@ -152,19 +152,19 @@ export default async function ExpertProfilePage({ params }: Props) {
                 </SplitLines>
 
                 <Reveal delay={0.1}>
-                  <p className="text-gold mt-7 max-w-lg text-sm leading-relaxed font-normal tracking-[0.06em] uppercase md:text-base">
+                  <p className="text-gold mt-7 max-w-lg text-sm leading-relaxed font-normal tracking-[0.06em] uppercase">
                     {content.role}
                   </p>
                 </Reveal>
 
                 <Reveal delay={0.16}>
-                  <h2 className="font-display text-grey-light mt-10  text-[clamp(1rem,2vw,2.1rem)] leading-[1.2] text-balance">
+                  <h2 className="font-display text-grey-light mt-7 text-[clamp(1rem,2vw,1.5rem)] leading-[1.2] text-balance">
                     {content.headline}
                   </h2>
                 </Reveal>
 
                 <Reveal delay={0.22}>
-                  <p className="text-grey-light/65 mt-6 max-w-lg text-base leading-relaxed md:text-lg">
+                  <p className="text-grey-light/65 mt-5 max-w-lg text-base leading-relaxed md:text-lg">
                     {content.intro}
                   </p>
                 </Reveal>
@@ -172,7 +172,7 @@ export default async function ExpertProfilePage({ params }: Props) {
 
               {/* Right: portrait */}
               <Reveal delay={0.12} y={45}>
-                <div className="relative aspect-[3/4] w-full overflow-hidden bg-white/5">
+                <div className="relative aspect-3/4 w-full overflow-hidden bg-white/5">
                   <Image
                     src={expert.image}
                     alt={expert.name}
@@ -376,7 +376,7 @@ export default async function ExpertProfilePage({ params }: Props) {
 
                 <SplitLines
                   as="h2"
-                  className="font-display mt-6 max-w-3xl text-[clamp(2rem,4vw,4.5rem)] leading-[1.1] text-white"
+                  className="font-display mt-6 max-w-3xl text-[clamp(2rem,4vw,4rem)] leading-[1] text-white"
                 >
                   {t("detail.contactTitle")}
                 </SplitLines>

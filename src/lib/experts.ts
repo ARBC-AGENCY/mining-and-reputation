@@ -38,10 +38,10 @@ export const EXPERTS: readonly Expert[] = [
 
   {
     id: "commsOfAfrica",
-    slug: "comms-of-africa-founder",
+    slug: "cyril-djami",
     // The name has not yet been supplied.
     // Replace this before enabling publication.
-    name: "Founder, Comms of Africa",
+    name: "Cyril DJAMI",
     image: "/images/experts/mining-reputation-crisis-expert.webp",
     imagePosition: "center 28%",
     order: 2,

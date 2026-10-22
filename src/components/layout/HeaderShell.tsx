@@ -127,7 +127,7 @@ export function HeaderShell({ strings }: { strings: HeaderStrings }) {
       <div
         // The home hero's intro timeline slides this bar in.
         data-header-bar
-        className="pointer-events-auto relative z-50 mx-4 mt-4 flex items-center justify-between gap-4 rounded-[18px] border border-white/10 bg-white/6 px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.25)] backdrop-blur-xl md:mx-auto md:mt-0 md:max-w-7xl md:rounded-none md:border-0 md:bg-transparent md:px-8 md:py-5 md:shadow-none md:backdrop-blur-none lg:grid lg:max-w-[84%] lg:grid-cols-[1fr_auto_1fr] lg:px-0"
+        className="pointer-events-auto mx-auto max-w-7xl px-6 lg:px-8 relative z-50 max-md:mx-4 mt-4 flex items-center justify-between gap-4 rounded-[18px] border border-white/10 bg-white/6  py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.25)] backdrop-blur-xl md:mx-auto md:mt-0 md:max-w-7xl md:rounded-none md:border-0 md:bg-transparent md:px-8 md:py-5 md:shadow-none md:backdrop-blur-none lg:grid 2xl:max-w-[80%] lg:grid-cols-[1fr_auto_1fr] "
       >
         <Link href="/" aria-label={strings.home} className="shrink-0 lg:justify-self-start">
           <Logo className="h-8 w-auto lg:h-9" />
@@ -157,7 +157,7 @@ export function HeaderShell({ strings }: { strings: HeaderStrings }) {
           </div>
         </nav>
 
-        <div className="hidden shrink-0 md:block lg:justify-self-end">
+        <div className="hidden shrink-0 min-[900px]:block lg:justify-self-end">
           <SpecularButton
             size="sm"
             className="whitespace-nowrap"

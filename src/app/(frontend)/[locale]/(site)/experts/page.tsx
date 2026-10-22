@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-
+import type { ReactNode } from "react";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitLines } from "@/components/motion/SplitLines";
 import { Link } from "@/i18n/navigation";
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
  */
 type CardProps = {
   expert: Expert;
-  role: string;
+  role: ReactNode;
   viewProfile: string;
   index: number;
 };
@@ -137,7 +137,7 @@ export default async function ExpertsPage({ params }: Props) {
               <SplitLines
                 as="h1"
                 id="experts-heading"
-                className="font-display text-[clamp(2.5rem,6vw,6.5rem)] leading-[0.74] tracking-[-0.035em]"
+                className="font-display text-[clamp(2rem,5vw,6rem)] leading-[0.74] tracking-[-0.035em]"
               >
                 <span data-split className="block text-grey-light">
                   {t("hero.lead")}
@@ -198,7 +198,9 @@ export default async function ExpertsPage({ params }: Props) {
                   key={expert.id}
                   expert={expert}
                   index={index}
-                  role={t(`profiles.${expert.id}.role`)}
+                  role={t.rich(`profiles.${expert.id}.role`, {
+                    br: () => <br />,
+                  })}
                   viewProfile={t("directory.viewProfile")}
                 />
               ))}
